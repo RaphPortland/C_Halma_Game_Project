@@ -28,19 +28,19 @@ while (bool==0) {
 	switch (nombredejoueur){
 		case 1:
 			bool=1;
-            fonctionmode1();
+            		fonctionmode1();
 		break;
 		case 2:
 			bool=1;
-			printf("fonctionmode2\n");
+			fonctionmode2();
 		break;
 		case 3: 
-            bool=1;
-			printf("fonctionmode3\n");
+           		bool=1;
+			fonctionmode3();
 		break;
 		case 4:
             bool=1;
-			printf("fonctionmode4");
+			fonctionmode4();
 		break;
 		default: 
 			bool=0;
