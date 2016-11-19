@@ -4,14 +4,12 @@
 //
 //  Created by Partouche on 10/11/2016.
 //  Copyright © 2016 Partouche. All rights reserved.
-//
-
 #include <stdio.h>
 #include "damier.h"
+#include "affichagemode1.h"
 
 
 int main() {
-
 	printf("Bievenue dans le jeu de Halma \n");
 	int bool=0;
 
@@ -28,19 +26,20 @@ while (bool==0) {
 	switch (nombredejoueur){
 		case 1:
 			bool=1;
-            		fonctionmode1();
+            fonctionmode1();
 		break;
 		case 2:
 			bool=1;
-			fonctionmode2();
+            
+            printf("fonctionmode2");
 		break;
 		case 3: 
-           		bool=1;
-			fonctionmode3();
-		break;
+            bool=1;
+            fonctionmode3();
+            break;
 		case 4:
             bool=1;
-			fonctionmode4();
+			printf("fonctionmode4");
 		break;
 		default: 
 			bool=0;
