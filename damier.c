@@ -69,18 +69,19 @@ void fonctionmode1(){
     
     //affichage du plateau de jeu
     int bool1=1;
-    int m=0;
+    int m=1;
     do {
-           fonctionaffichagepionenmode1(damier, 16, 16);
+           fonctionaffichagepion(damier, 16, 16);
         int Joueurquijoue=m%2;
-        printf("m modulo 2 est egal a %d , La valeur de m est %d\n", Joueurquijoue, m);
-        if (Joueurquijoue==0)
+        if (Joueurquijoue!=0)
         {
-            printf("Au joueur 2 de jouer\n");
-            fonctiondeplacementdespionsduj2(damier); }
-            else {
             printf("Au joueur 1 de jouer\n");
             fonctiondeplacementdespionsduj1(damier);
+        }
+            else {
+            printf("Au joueur 2 de jouer\n");
+            fonctiondeplacementdespionsduj2(damier);
+                
         }
         m++;
     system("clear");
