@@ -11,14 +11,18 @@
 
 void fonctionaffichagepion(int damier[16][16], int tailleI, int tailleJ){
 
-
+   
     for ( int ibis=0 ; ibis< tailleI; ibis++)
     {
+        if (ibis<10){
+            printf("\n %d.  ", ibis);}
+        else{printf("\n %d. ", ibis);}
         for (int jbis=0 ;jbis<tailleJ ; jbis++)
         {
             printf("%d ", damier[ibis][jbis]);
         }
-        printf("\n");
+        
+
     }
 
 }
@@ -39,9 +43,41 @@ void fonctiondeplacementdespionsduj1(int damier[16][16]){
     damier[LIGNE][COLONNE]=0;
     printf("Choissisez l'endroit d'arriver : \n");
     int LIGNEARRIVE, COLONNEARRIVE;
-    scanf("%d %d", &LIGNEARRIVE, &COLONNEARRIVE);
-    damier[LIGNEARRIVE][COLONNEARRIVE]=1;
+    int bool6=1;
+    do {
+        scanf("%d %d", &LIGNEARRIVE, &COLONNEARRIVE);
+        
+        if (damier[LIGNEARRIVE][COLONNEARRIVE]!=0) {
+            printf("Veuillez chosir un endroit d'arriver ou il y a aucun pion adverse : \n");
+            bool6=1;
+        }
+        else {bool6=0;}
+        
+    } while (bool6==1);
+    int bool11=1;
+    do {
+                if ((LIGNEARRIVE==LIGNE+1 && COLONNEARRIVE==COLONNE-1) || (LIGNEARRIVE==LIGNE+1 && COLONNEARRIVE==COLONNE+1) || (LIGNEARRIVE==LIGNE && COLONNEARRIVE==COLONNE+1)
+            || (LIGNEARRIVE==LIGNE && COLONNEARRIVE==COLONNE-1) || (LIGNEARRIVE==LIGNE+1 && COLONNEARRIVE==COLONNE) || (LIGNEARRIVE==LIGNE+1 && COLONNEARRIVE==COLONNE-1)
+            || (LIGNEARRIVE==LIGNE-1 && COLONNEARRIVE==COLONNE-1) || ((LIGNEARRIVE==LIGNE-1 && COLONNEARRIVE==COLONNE )))
+        {
+            if (damier[LIGNEARRIVE][COLONNEARRIVE]==0)
+                {
+                    damier[LIGNEARRIVE][COLONNEARRIVE]=1;
+                    bool11=0;
+                }
+            else {bool11=1; printf("Veuillez indiquer un endroit ou il y a aucun pion\n");scanf("%d %d", &LIGNEARRIVE, &COLONNEARRIVE);}
+        }
+        else {
+            printf("Veuillez inserer un endroit qui respecte les regles, cad regle du pas ou/et choisir une case ou il y a aucun pion: \n");
+            bool11=1;
+            scanf("%d %d", &LIGNEARRIVE, &COLONNEARRIVE);
+        }
+    } while (bool11==1);
 }
+
+
+
+
 void fonctiondeplacementdespionsduj2(int damier[16][16]){
     printf("Choissiez un pion :\n");
     int LIGNE, COLONNE;
@@ -58,6 +94,55 @@ void fonctiondeplacementdespionsduj2(int damier[16][16]){
     damier[LIGNE][COLONNE]=0;
     printf("Choissisez l'endroit d'arriver : \n");
     int LIGNEARRIVE, COLONNEARRIVE;
-    scanf("%d %d", &LIGNEARRIVE, &COLONNEARRIVE);
-    damier[LIGNEARRIVE][COLONNEARRIVE]=2;
+    int bool7=1;
+    do {
+        scanf("%d %d", &LIGNEARRIVE, &COLONNEARRIVE);
+        
+        if (damier[LIGNEARRIVE][COLONNEARRIVE]!=0) {
+            printf("Veuillez chosir un endroit d'arriver ou il y a aucun pion : \n");
+            bool7=1;
+        }
+        else {bool7=0;}
+        
+    } while (bool7==1);
+    int bool10=1;
+    do {
+                if ((LIGNEARRIVE==LIGNE+1 && COLONNEARRIVE==COLONNE-1) || (LIGNEARRIVE==LIGNE+1 && COLONNEARRIVE==COLONNE+1) || (LIGNEARRIVE==LIGNE && COLONNEARRIVE==COLONNE+1)
+            || (LIGNEARRIVE==LIGNE && COLONNEARRIVE==COLONNE-1) || (LIGNEARRIVE==LIGNE+1 && COLONNEARRIVE==COLONNE) || (LIGNEARRIVE==LIGNE+1 && COLONNEARRIVE==COLONNE-1)
+            || (LIGNEARRIVE==LIGNE-1 && COLONNEARRIVE==COLONNE-1) || ((LIGNEARRIVE==LIGNE-1 && COLONNEARRIVE==COLONNE )))
+        {
+            if (damier[LIGNEARRIVE][COLONNEARRIVE]==0)
+                {
+                    damier[LIGNEARRIVE][COLONNEARRIVE]=2;
+                    bool10=0;
+                }
+            else {bool10=1; printf("Veuillez indiquer un endroit ou il y a aucun pion"); scanf("%d %d", &LIGNEARRIVE, &COLONNEARRIVE);}
+        }
+        else {
+            printf("Veuillez inserer un endroit qui respecte les regles, cad regle du pas ou/et choisir une case ou il y a aucun pion: \n");
+            bool10=1;
+            scanf("%d %d", &LIGNEARRIVE, &COLONNEARRIVE);
+        }
+    } while (bool10==1);
+
+
+
+    
+
+
+
+
+
+
 }
+
+
+
+
+
+
+
+
+
+
+

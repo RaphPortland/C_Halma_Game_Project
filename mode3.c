@@ -54,23 +54,7 @@ void fonctionmode3(){
     damier[12][15]=2;
     damier[12][14]=2;
     
-    //Remplissage du 3 eme jeu de pions dans le tableau LES PIONS DU JOUEUR 3
-    
-    damier[0][15]=4;
-    damier[0][14]=4;
-    damier[0][13]=4;
-    damier[0][12]=4;
-    damier[1][15]=4;
-    damier[1][14]=4;
-    damier[1][13]=4;
-    damier[1][12]=4;
-    damier[2][15]=4;
-    damier[2][14]=4;
-    damier[2][13]=4;
-    damier[3][15]=4;
-    damier[3][14]=4;
-    
-    // Remplissage du 4eme jeu de pions dans le tableau LES PIONS DU JOUEUR 4
+    // Remplissage du 3eme jeu de pions dans le tableau LES PIONS DU JOUEUR 4
     
     damier[15][0]=3;
     damier[15][1]=3;
@@ -86,7 +70,24 @@ void fonctionmode3(){
     damier[12][0]=3;
     damier[12][1]=3;
     
-    //affichage du plateau de jeu
+    //Remplissage du 4 eme jeu de pions dans le tableau LES PIONS DU JOUEUR 3
+    
+    damier[0][15]=4;
+    damier[0][14]=4;
+    damier[0][13]=4;
+    damier[0][12]=4;
+    damier[1][15]=4;
+    damier[1][14]=4;
+    damier[1][13]=4;
+    damier[1][12]=4;
+    damier[2][15]=4;
+    damier[2][14]=4;
+    damier[2][13]=4;
+    damier[3][15]=4;
+    damier[3][14]=4;
+    
+    
+    //affichage du plateau de jeu a 4 joueur et deplacement de pions non Verifié
     int bool1=1;
     int m=1;
     do {
