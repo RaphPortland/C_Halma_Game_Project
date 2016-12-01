@@ -8,6 +8,9 @@
 #include "damier.h"
 #include "affichagemode1.h"
 
+void fonctionmode1();
+void fonctionmode3();
+
 
 int main() {
 	printf("Bievenue dans le jeu de Halma \n");

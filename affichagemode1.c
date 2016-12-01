@@ -10,7 +10,8 @@
 
 
 void fonctionaffichagepion(int damier[16][16], int tailleI, int tailleJ){
-
+    
+    printf("     0. 1. 2. 3. 4. 5. 6. 7. 8. 9. 10 11 12 13 14 15\n ");
    
     for ( int ibis=0 ; ibis< tailleI; ibis++)
     {
@@ -19,12 +20,9 @@ void fonctionaffichagepion(int damier[16][16], int tailleI, int tailleJ){
         else{printf("\n %d. ", ibis);}
         for (int jbis=0 ;jbis<tailleJ ; jbis++)
         {
-            printf("%d ", damier[ibis][jbis]);
+            printf("%d  ", damier[ibis][jbis]);
         }
-        
-
     }
-
 }
 
 void fonctiondeplacementdespionsduj1(int damier[16][16]){
@@ -77,7 +75,6 @@ void fonctiondeplacementdespionsduj1(int damier[16][16]){
 
 
 
-
 void fonctiondeplacementdespionsduj2(int damier[16][16]){
     printf("Choissiez un pion :\n");
     int LIGNE, COLONNE;
@@ -89,45 +86,66 @@ void fonctiondeplacementdespionsduj2(int damier[16][16]){
             }
             else {bool3=1;}
         } while (bool3==0);
-
+    int sautoupas=0;
+    printf("Voulez vous faire : \n1. un pas ?\n2. un saut ?\n");
+    scanf("%d", &sautoupas);
+    while(sautoupas!=1 || sautoupas!=2){
+        printf("Veuillez selectioner : 1 pour un pas et 2 pour un saut");
+        scanf("%d", &sautoupas);
+    }
     
     damier[LIGNE][COLONNE]=0;
     printf("Choissisez l'endroit d'arriver : \n");
     int LIGNEARRIVE, COLONNEARRIVE;
     int bool7=1;
-    do {
-        scanf("%d %d", &LIGNEARRIVE, &COLONNEARRIVE);
-        
-        if (damier[LIGNEARRIVE][COLONNEARRIVE]!=0) {
-            printf("Veuillez chosir un endroit d'arriver ou il y a aucun pion : \n");
-            bool7=1;
-        }
-        else {bool7=0;}
-        
-    } while (bool7==1);
-    int bool10=1;
-    do {
-                if ((LIGNEARRIVE==LIGNE+1 && COLONNEARRIVE==COLONNE-1) || (LIGNEARRIVE==LIGNE+1 && COLONNEARRIVE==COLONNE+1) || (LIGNEARRIVE==LIGNE && COLONNEARRIVE==COLONNE+1)
-            || (LIGNEARRIVE==LIGNE && COLONNEARRIVE==COLONNE-1) || (LIGNEARRIVE==LIGNE+1 && COLONNEARRIVE==COLONNE) || (LIGNEARRIVE==LIGNE+1 && COLONNEARRIVE==COLONNE-1)
-            || (LIGNEARRIVE==LIGNE-1 && COLONNEARRIVE==COLONNE-1) || ((LIGNEARRIVE==LIGNE-1 && COLONNEARRIVE==COLONNE )))
-        {
-            if (damier[LIGNEARRIVE][COLONNEARRIVE]==0)
-                {
-                    damier[LIGNEARRIVE][COLONNEARRIVE]=2;
-                    bool10=0;
-                }
-            else {bool10=1; printf("Veuillez indiquer un endroit ou il y a aucun pion"); scanf("%d %d", &LIGNEARRIVE, &COLONNEARRIVE);}
-        }
-        else {
-            printf("Veuillez inserer un endroit qui respecte les regles, cad regle du pas ou/et choisir une case ou il y a aucun pion: \n");
-            bool10=1;
+        do {
             scanf("%d %d", &LIGNEARRIVE, &COLONNEARRIVE);
-        }
-    } while (bool10==1);
+        
+            if (damier[LIGNEARRIVE][COLONNEARRIVE]!=0) {
+                printf("Veuillez chosir un endroit d'arriver ou il y a aucun pion : \n");
+                bool7=1;
+            }
+            else {bool7=0;}
+        
+        } while (bool7==1);
+    int bool10=1;
+        do {
+                    if ((LIGNEARRIVE==LIGNE+1 && COLONNEARRIVE==COLONNE-1) || (LIGNEARRIVE==LIGNE+1 && COLONNEARRIVE==COLONNE+1) || (LIGNEARRIVE==LIGNE && COLONNEARRIVE==COLONNE+1)
+                || (LIGNEARRIVE==LIGNE && COLONNEARRIVE==COLONNE-1) || (LIGNEARRIVE==LIGNE+1 && COLONNEARRIVE==COLONNE) || (LIGNEARRIVE==LIGNE+1 && COLONNEARRIVE==COLONNE-1)
+                || (LIGNEARRIVE==LIGNE-1 && COLONNEARRIVE==COLONNE-1) || ((LIGNEARRIVE==LIGNE-1 && COLONNEARRIVE==COLONNE )) )
+            {
+                if (damier[LIGNEARRIVE][COLONNEARRIVE]==0)
+                    {                      
+                        bool10=0;
+                    }
+                else {bool10=1; printf("Veuillez indiquer un endroit ou il y a aucun pion"); scanf("%d %d", &LIGNEARRIVE, &COLONNEARRIVE);}
+            }
+            else {
+                printf("Veuillez inserer un endroit qui respecte les regles, cad regle du pas ou/et choisir une case ou il y a aucun pion: \n");
+                bool10=1;
+                scanf("%d %d", &LIGNEARRIVE, &COLONNEARRIVE);
+            }
+        } while (bool10==1 && sautoupas==1);
+
+   // int bool12=1;
+       // do {
+        //    if()
 
 
 
-    
+
+
+
+
+       // } while (bool12==1 && sautoupas==2);
+        
+//damier[LIGNEARRIVE][COLONNEARRIVE]=2;
+
+//}
+
+
+
+
 
 
 
@@ -135,14 +153,3 @@ void fonctiondeplacementdespionsduj2(int damier[16][16]){
 
 
 }
-
-
-
-
-
-
-
-
-
-
-

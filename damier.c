@@ -75,11 +75,11 @@ void fonctionmode1(){
         int Joueurquijoue=m%2;
         if (Joueurquijoue!=0)
         {
-            printf("Au joueur 1 de jouer\n");
+            printf("\nAu joueur 1 de jouer\n");
             fonctiondeplacementdespionsduj1(damier);
         }
             else {
-            printf("Au joueur 2 de jouer\n");
+            printf("\nAu joueur 2 de jouer\n");
             fonctiondeplacementdespionsduj2(damier);
                 
         }
