@@ -14,5 +14,4 @@
 
 #endif /* affichagemode1_h */
 void fonctionaffichagepion(int damier[16][16], int ibis, int jbis);
-void fonctiondeplacementdespionsduj1(int damier[16][16]);
-void fonctiondeplacementdespionsduj2(int damier[16][16]);
+

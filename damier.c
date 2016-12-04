@@ -76,11 +76,11 @@ void fonctionmode1(){
         if (Joueurquijoue!=0)
         {
             printf("\nAu joueur 1 de jouer\n");
-            fonctiondeplacementdespionsduj1(damier);
+            fonctiondedeplacementdepionsdujoueurI(damier, 1);
         }
             else {
             printf("\nAu joueur 2 de jouer\n");
-            fonctiondeplacementdespionsduj2(damier);
+            fonctiondedeplacementdepionsdujoueurI(damier, 2);
                 
         }
         m++;

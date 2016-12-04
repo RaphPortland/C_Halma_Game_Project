@@ -6,6 +6,7 @@
 //  Copyright © 2016 Partouche. All rights reserved.
 #include <stdio.h>
 #include "damier.h"
+#include "Lesfctdedeplacementdespions.h"
 #include "affichagemode1.h"
 
 void fonctionmode1();

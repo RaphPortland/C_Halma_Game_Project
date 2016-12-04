@@ -87,7 +87,7 @@ void fonctionmode3(){
     damier[3][14]=4;
     
     
-    //affichage du plateau de jeu a 4 joueur et deplacement de pions non Verifié
+    //affichage du plateau de jeu a 4 joueur et deplacement de pions Verifié
     int bool1=1;
     int m=1;
     do {
@@ -95,22 +95,26 @@ void fonctionmode3(){
         int Joueurquijoue=m%4;
         if (Joueurquijoue==1)
         {
-            printf("Au joueur 1 de jouer\n");
-            fonctiondeplacementdespionsduj1(damier);
+            printf("\nAu joueur 1 de jouer\n");
+            fonctiondedeplacementdepionsdujoueurI(damier, 1);
         }
         else if(Joueurquijoue==2)
         {
-            printf("Au joueur 2 de jouer\n");
-            fonctiondeplacementdespionsduj2(damier);
+            printf("\nAu joueur 2 de jouer\n");
+            fonctiondedeplacementdepionsdujoueurI(damier, 2);
         }
-        else if (Joueurquijoue==3) {printf("Au joueur 3 de jouer\n");
-            fonctiondeplacementdespionsduj3(damier);}
+        else if (Joueurquijoue==3) {
+
+            printf("\nAu joueur 3 de jouer\n");
+            fonctiondedeplacementdepionsdujoueurI(damier, 3);
+
+            }
         else {
-            printf("Au joueur 4 de jouer\n");
-            fonctiondeplacementdespionsduj4(damier);
+            printf("\nAu joueur 4 de jouer\n");
+            fonctiondedeplacementdepionsdujoueurI(damier, 4);
             
         }
         m++;
-        system("clear");
+        system("clear\n");
     } while (bool1==1);
 }
