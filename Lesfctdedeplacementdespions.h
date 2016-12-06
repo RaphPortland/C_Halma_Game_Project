@@ -13,3 +13,4 @@
 
 #endif /* Lesfctverification_h */
 void fonctiondedeplacementdepionsdujoueurI(int damier[16][16], int Joueurquijoue);
+
