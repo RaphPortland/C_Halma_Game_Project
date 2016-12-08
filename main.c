@@ -13,6 +13,7 @@ void fonctionmode1();
 void fonctionmode3();
 
 
+
 int main() {
 	printf("Bievenue dans le jeu de Halma \n");
 	int bool=0;
@@ -34,7 +35,6 @@ while (bool==0) {
 		break;
 		case 2:
 			bool=1;
-            
             printf("fonctionmode2");
 		break;
 		case 3: 

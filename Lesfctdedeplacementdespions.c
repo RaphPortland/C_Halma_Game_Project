@@ -16,7 +16,7 @@ void fonctiondedeplacementdepionsdujoueurI(int damier[16][16], int Joueurquijoue
     int LIGNE, COLONNE;
     int LIGNEARRIVE = 0, COLONNEARRIVE=0;
     int bool3=0;
-    int sautoupas;
+    
     do {        //On demande les valeurs des pions choisi jusqu'a que le pion correspondant au joueur est choisi :
         scanf("%d %d", &LIGNE, &COLONNE);
         if (damier[LIGNE][COLONNE]!=Joueurquijoue){
@@ -35,6 +35,7 @@ void fonctiondedeplacementdepionsdujoueurI(int damier[16][16], int Joueurquijoue
     int RETOUR=1;
     int bool36=0;
     int sautx=1;
+    int sautoupas;
 
     do {        // Demande si l'utilisateur veut faire un saut ou un pas 
             printf("Voulez vous faire : 1. Un pas 2. Un saut\n");
@@ -112,224 +113,39 @@ void fonctiondedeplacementdepionsdujoueurI(int damier[16][16], int Joueurquijoue
 
             if (COLONNEARRIVE==COLONNE && LIGNEARRIVE==LIGNE+2 && damier[LIGNEARRIVE-1][COLONNEARRIVE]!=0){
                 bool13=0;
-                int bool18=0;
-                damier[LIGNE][COLONNE]=0;
-                damier[LIGNEARRIVE][COLONNEARRIVE]=Joueurquijoue;
-                 do {
-                    printf("Voulez vous refaire un saut adjacent si celui ci est possible ?\n1. Oui \n2. Non\n");
-                     scanf("%d", &sautx);
-
-                        if(sautx==1){                                       
-                        COLONNE=COLONNEARRIVE;
-                        LIGNE=LIGNEARRIVE;
-                        RETOUR=1;
-                            bool18=1;
-                        }
-                        else if (sautx==2){
-                            RETOUR=0;
-                            bool18=1;
-                        }
-                        else {
-                        printf("Veuillez rentrer une valeur comprise entre 0 et 1");
-                        bool18=0;
-                        }
-
-                } while(bool18==0);
-
+                RETOUR=fonctionsautadjacent(damier, Joueurquijoue, &LIGNE, &COLONNE, &LIGNEARRIVE, &COLONNEARRIVE);
             }
-
             else if (LIGNEARRIVE==LIGNE-2 && COLONNE==COLONNEARRIVE && damier[LIGNEARRIVE+1][COLONNEARRIVE]!=0){
                 bool13=0;
-                int bool18=0;
-
-                damier[LIGNE][COLONNE]=0;
-                damier[LIGNEARRIVE][COLONNEARRIVE]=Joueurquijoue;
-                 do {
-                    printf("Voulez vous refaire un saut adjacent si celui ci est possible ?\n1. Oui \n2. Non\n");
-                     scanf("%d", &sautx);
-
-                        if(sautx==1){                                       
-                        COLONNE=COLONNEARRIVE;
-                        LIGNE=LIGNEARRIVE;
-                        RETOUR=1;
-                        bool18=1;
-                        }
-                        else if (sautx==2){
-                            RETOUR=0;
-                            bool18=1;
-                        }
-                        else {
-                        printf("Veuillez rentrer une valeur comprise entre 0 et 1");
-                        bool18=0;
-                        }
-
-                } while(bool18==0);
+                RETOUR=fonctionsautadjacent(damier, Joueurquijoue, &LIGNE, &COLONNE, &LIGNEARRIVE, &COLONNEARRIVE);
             }
             else if(LIGNEARRIVE==LIGNE && COLONNEARRIVE==COLONNE-2 && damier[LIGNEARRIVE][COLONNEARRIVE+1]!=0){
                 bool13=0;
-                int bool18=0;
-
-                damier[LIGNE][COLONNE]=0;
-                damier[LIGNEARRIVE][COLONNEARRIVE]=Joueurquijoue;
-                 do {
-                    printf("Voulez vous refaire un saut adjacent si celui ci est possible ?\n1. Oui \n2. Non\n");
-                     scanf("%d", &sautx);
-
-                        if(sautx==1){                                       
-                        COLONNE=COLONNEARRIVE;
-                        LIGNE=LIGNEARRIVE;
-                        RETOUR=1;
-                        bool18=1;
-                        }
-                        else if (sautx==2){
-                            RETOUR=0;
-                            bool18=1;
-                        }
-                        else {
-                        printf("Veuillez rentrer une valeur comprise entre 0 et 1");
-                        bool18=0;
-                        }
-
-                } while(bool18==0);
+                RETOUR=fonctionsautadjacent(damier, Joueurquijoue, &LIGNE, &COLONNE, &LIGNEARRIVE, &COLONNEARRIVE);
             }
             else if(LIGNEARRIVE==LIGNE && COLONNEARRIVE==COLONNE+2 && damier[LIGNEARRIVE][COLONNEARRIVE-1]!=0){
                 bool13=0;
-                int bool18=0;
-
-                damier[LIGNE][COLONNE]=0;
-                damier[LIGNEARRIVE][COLONNEARRIVE]=Joueurquijoue;
-                 do {
-                    printf("Voulez vous refaire un saut adjacent si celui ci est possible ?\n1. Oui \n2. Non\n");
-                     scanf("%d", &sautx);
-
-                        if(sautx==1){                                       
-                        COLONNE=COLONNEARRIVE;
-                        LIGNE=LIGNEARRIVE;
-                        RETOUR=1;
-                            bool18=1;
-                        }
-                        else if (sautx==2){
-                            RETOUR=0;
-                            bool18=1;
-                        }
-                        else {
-                        printf("Veuillez rentrer une valeur comprise entre 0 et 1");
-                        bool18=0;
-                        }
-
-                } while(bool18==0);
+                RETOUR=fonctionsautadjacent(damier, Joueurquijoue, &LIGNE, &COLONNE, &LIGNEARRIVE, &COLONNEARRIVE);
             }
             else if(LIGNEARRIVE==LIGNE-2 && COLONNEARRIVE==COLONNE-2 && damier[LIGNEARRIVE+1][COLONNEARRIVE+1]!=0){
                 bool13=0;
-                int bool18=0;
-
-                damier[LIGNE][COLONNE]=0;
-                damier[LIGNEARRIVE][COLONNEARRIVE]=Joueurquijoue;
-                 do {
-                    printf("Voulez vous refaire un saut adjacent si celui ci est possible ?\n1. Oui \n2. Non\n");
-                     scanf("%d", &sautx);
-
-                        if(sautx==1){                                       
-                        COLONNE=COLONNEARRIVE;
-                        LIGNE=LIGNEARRIVE;
-                        RETOUR=1;
-                            bool18=1;
-                        }
-                        else if (sautx==2){
-                            RETOUR=0;
-                            bool18=1;
-                        }
-                        else {
-                        printf("Veuillez rentrer une valeur comprise entre 0 et 1");
-                        bool18=0;
-                        }
-
-                } while(bool18==0);
+                RETOUR=fonctionsautadjacent(damier, Joueurquijoue, &LIGNE, &COLONNE, &LIGNEARRIVE, &COLONNEARRIVE);
             }
             else if(LIGNEARRIVE==LIGNE-2 && COLONNEARRIVE==COLONNE+2 && damier[LIGNEARRIVE+1][COLONNEARRIVE-1]!=0){
                 bool13=0;
-                int bool18=0;
-
-                damier[LIGNE][COLONNE]=0;
-                damier[LIGNEARRIVE][COLONNEARRIVE]=Joueurquijoue;
-                 do {
-                    printf("Voulez vous refaire un saut adjacent si celui ci est possible ?\n1. Oui \n2. Non\n");
-                     scanf("%d", &sautx);
-
-                        if(sautx==1){                                       
-                        COLONNE=COLONNEARRIVE;
-                        LIGNE=LIGNEARRIVE;
-                        RETOUR=1;
-                            bool18=1;
-                        }
-                        else if (sautx==2){
-                            RETOUR=0;
-                            bool18=1;
-                        }
-                        else {
-                        printf("Veuillez rentrer une valeur comprise entre 0 et 1");
-                        bool18=0;
-                        }
-
-                } while(bool18==0);
+                RETOUR=fonctionsautadjacent(damier, Joueurquijoue, &LIGNE, &COLONNE, &LIGNEARRIVE, &COLONNEARRIVE);
 
             }
             else if (LIGNEARRIVE==LIGNE+2 && COLONNEARRIVE==COLONNE-2 && damier[LIGNEARRIVE-1][COLONNEARRIVE+1]!=0){
                  bool13=0;
-                int bool18=0;
-
-                damier[LIGNE][COLONNE]=0;
-                damier[LIGNEARRIVE][COLONNEARRIVE]=Joueurquijoue;
-                 do {
-                    printf("Voulez vous refaire un saut adjacent si celui ci est possible ?\n1. Oui \n2. Non\n");
-                     scanf("%d", &sautx);
-
-                        if(sautx==1){                                       
-                        COLONNE=COLONNEARRIVE;
-                        LIGNE=LIGNEARRIVE;
-                        RETOUR=1;
-                            bool18=1;
-                        }
-                        else if (sautx==2){
-                            RETOUR=0;
-                            bool18=1;
-                        }
-                        else {
-                        printf("Veuillez rentrer une valeur comprise entre 0 et 1");
-                        bool18=0;
-                        }
-
-                } while(bool18==0);
+                RETOUR=fonctionsautadjacent(damier, Joueurquijoue, &LIGNE, &COLONNE, &LIGNEARRIVE, &COLONNEARRIVE);
 
             }
             else if(LIGNEARRIVE==LIGNE+2 && COLONNEARRIVE==COLONNE+2 && damier[LIGNEARRIVE-1][COLONNEARRIVE-1]!=0)            {
                 bool13=0;
-                int bool18=0;
-
-                damier[LIGNE][COLONNE]=0;
-                damier[LIGNEARRIVE][COLONNEARRIVE]=Joueurquijoue;
-                 do {
-                    printf("Voulez vous refaire un saut adjacent si celui ci est possible ?\n1. Oui \n2. Non\n");
-                     scanf("%d", &sautx);
-
-                        if(sautx==1){                                       
-                        COLONNE=COLONNEARRIVE;
-                        LIGNE=LIGNEARRIVE;
-                        RETOUR=1;
-                            bool18=1;
-                        }
-                        else if (sautx==2){
-                            RETOUR=0;
-                            bool18=1;
-                        }
-                        else {
-                        printf("Veuillez rentrer une valeur comprise entre 0 et 1");
-                        bool18=0;
-                        }
-
-                } while(bool18==0);
-
+                RETOUR=fonctionsautadjacent(damier, Joueurquijoue, &LIGNE, &COLONNE, &LIGNEARRIVE, &COLONNEARRIVE);
             }
+
             else {
 
                 printf("Finalement envie de faire un PAS ? \n1. Oui \n2. Non\n");
@@ -355,7 +171,35 @@ void fonctiondedeplacementdepionsdujoueurI(int damier[16][16], int Joueurquijoue
 
 
 
+}
 
+int fonctionsautadjacent(int damier[16][16], int Joueurquijoue, int *LIGNE, int *COLONNE, int *LIGNEARRIVE, int *COLONNEARRIVE ){
+    int bool18=0;
+    int sautx;
+    int RETOUR=0;
 
+                damier[*LIGNE][*COLONNE]=0;
+                damier[*LIGNEARRIVE][*COLONNEARRIVE]=Joueurquijoue;
+                 do {
+                    printf("Voulez vous refaire un saut adjacent si celui ci est possible ?\n1. Oui \n2. Non\n");
+                     scanf("%d", &sautx);
 
+                        if(sautx==1){                                       
+                            *COLONNE=*COLONNEARRIVE;
+                            *LIGNE=*LIGNEARRIVE;
+                            RETOUR=1;
+                            bool18=1;
+                        }
+                        else if (sautx==2){
+                            RETOUR=0;
+                            bool18=1;
+                        }
+                        else {
+                            printf("Veuillez rentrer une valeur comprise entre 0 et 1");
+                            bool18=0;
+                        }
+
+                } while(bool18==0);
+
+    return RETOUR;
 }
