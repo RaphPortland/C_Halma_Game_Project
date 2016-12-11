@@ -8,6 +8,8 @@
 #include "damier.h"
 #include "Lesfctdedeplacementdespions.h"
 #include "affichagemode1.h"
+#include <time.h>
+
 
 void fonctionmode1();
 void fonctionmode3();
@@ -35,7 +37,7 @@ while (bool==0) {
 		break;
 		case 2:
 			bool=1;
-            printf("fonctionmode2");
+            fonctionmode2();
 		break;
 		case 3: 
             bool=1;
@@ -43,7 +45,7 @@ while (bool==0) {
             break;
 		case 4:
             bool=1;
-			printf("fonctionmode4");
+            printf("fonction mode 4");
 		break;
 		default: 
 			bool=0;
