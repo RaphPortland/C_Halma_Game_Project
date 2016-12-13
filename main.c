@@ -11,8 +11,11 @@
 #include <time.h>
 
 
+
 void fonctionmode1();
+void fonctionmode2();
 void fonctionmode3();
+void fonctionmode4();
 
 
 
@@ -45,7 +48,7 @@ while (bool==0) {
             break;
 		case 4:
             bool=1;
-            printf("fonction mode 4");
+            fonctionmode4();
 		break;
 		default: 
 			bool=0;

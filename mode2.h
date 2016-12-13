@@ -12,6 +12,7 @@
 #include "affichagemode1.h"
 #include <stdio.h>
 
+
 #endif /* mode2_h */
 void fonctionmode2();
 void fonctionaffichagepion(int damier[16][16], int ibis, int jbis);
