@@ -127,7 +127,7 @@ int bool1=1;
             //LIGNEARRIVE=0;
             //}
         }
-        printf("Ligne Arrive : %d et Colonne Arrive : %d sont les coordonés du point de depart\n", LIGNEARRIVE, COLONNEARRIVE);
+        printf("Ligne : %d et Arrive : %d sont les coordonnées du point d'arriver\n", LIGNEARRIVE, COLONNEARRIVE);
     damier[LIGNEARRIVE][COLONNEARRIVE]=2;
     damier[LIGNE][COLONNE]=0;
     }
