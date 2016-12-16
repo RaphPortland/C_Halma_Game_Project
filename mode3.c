@@ -90,31 +90,36 @@ void fonctionmode3(){
     //affichage du plateau de jeu a 4 joueur et deplacement de pions Verifié
     int bool1=1;
     int m=1;
+    int Joueurquijoue=0;
     do {
         fonctionaffichagepion(damier, 16, 16);
-        int Joueurquijoue=m%4;
-        if (Joueurquijoue==1)
+        int Aquiletour=m%4;
+        if (Aquiletour==1)
         {
             printf("\nAu joueur 1 de jouer\n");
             fonctiondedeplacementdepionsdujoueurI(damier, 1);
+            Joueurquijoue=1;
         }
-        else if(Joueurquijoue==2)
+        else if(Aquiletour==2)
         {
             printf("\nAu joueur 2 de jouer\n");
             fonctiondedeplacementdepionsdujoueurI(damier, 2);
+            Joueurquijoue=2;
         }
-        else if (Joueurquijoue==3) {
-
+        else if (Aquiletour==3) 
+        {
             printf("\nAu joueur 3 de jouer\n");
             fonctiondedeplacementdepionsdujoueurI(damier, 3);
-
-            }
-        else {
+            Joueurquijoue=3;
+        }
+        else 
+        {
             printf("\nAu joueur 4 de jouer\n");
             fonctiondedeplacementdepionsdujoueurI(damier, 4);
-            
+            Joueurquijoue=4;
         }
         m++;
+        detectiondevictoire (damier, Joueurquijoue);
         system("clear\n");
     } while (bool1==1);
 }

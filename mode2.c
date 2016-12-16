@@ -55,42 +55,53 @@ void fonctionmode2(){
     //affichage du plateau de jeu + Jeu
     int bool1=1;
     int m=1;
+    int Joueurquijoue=0;
     do {
            fonctionaffichagepion(damier, 16, 16);
-        int Joueurquijoue=m%2;
-        if (Joueurquijoue!=0)
+        int Aquiletour=m%2;
+        if (Aquiletour!=0)
         {
             printf("\nAu joueur 1 de jouer\n");
             fonctiondedeplacementdepionsdujoueurI(damier, 1);
+            Joueurquijoue=1;
         }
             else {
             printf("\nL'ordinateur va jouer : \n");
-            fonctiondeplacementparlordi(damier);
+            fonctiondeplacementparlordi(damier, 2);
+            Joueurquijoue=2;
         }
-        m++;
+    m++;
     system("clear");
+    detectiondevictoire (damier, Joueurquijoue);
     } while (bool1==1);
 }
-void fonctiondeplacementparlordi(int damier[16][16]){
+void fonctiondeplacementparlordi(int damier[16][16], int numerodejoueur){
 int LIGNE=rand()%16;
 int COLONNE=rand()%16;
 int COLONNEARRIVE=0;
 int t=0;
-int m=0;
+    //int bool12=1;
+    int m=0;
 int LIGNEARRIVE=rand()%16;
 COLONNEARRIVE=rand()%16;
 //L'ordi choisi le pion qu'il veut bouger
-    while(damier[LIGNE][COLONNE]!=2){
+    while(damier[LIGNE][COLONNE]!=numerodejoueur /*&& bool12==0*/){
             if (t%2==1){
                 LIGNE++;
             }
             if (t%2==0){
                 COLONNE++;
             }
-             if (LIGNE >= 16 && COLONNE>=16) {
-                    LIGNE=0;
-                    COLONNE=0;
-                }
+            if (LIGNE >= 16 && COLONNE>=16) {
+                LIGNE=0;
+                COLONNE=0;
+            }
+            /*if ((LIGNEARRIVE==LIGNE+1 && COLONNEARRIVE==COLONNE-1) || (LIGNEARRIVE==LIGNE+1 && COLONNEARRIVE==COLONNE+1) || (LIGNEARRIVE==LIGNE && COLONNEARRIVE==COLONNE+1)
+                || (LIGNEARRIVE==LIGNE && COLONNEARRIVE==COLONNE-1) || (LIGNEARRIVE==LIGNE+1 && COLONNEARRIVE==COLONNE) || (LIGNEARRIVE==LIGNE+1 && COLONNEARRIVE==COLONNE-1)
+                || (LIGNEARRIVE==LIGNE-1 && COLONNEARRIVE==COLONNE-1) || (LIGNEARRIVE==LIGNE-1 && COLONNEARRIVE==COLONNE )){
+                bool12=0;
+            }*/
+
         t++;
     }
     printf("Ligne : %d et colonne %d sont les coordonés du point de depart\n", LIGNE, COLONNE);
@@ -128,7 +139,7 @@ int bool1=1;
             //}
         }
         printf("Ligne : %d et Arrive : %d sont les coordonnées du point d'arriver\n", LIGNEARRIVE, COLONNEARRIVE);
-    damier[LIGNEARRIVE][COLONNEARRIVE]=2;
+    damier[LIGNEARRIVE][COLONNEARRIVE]=numerodejoueur;
     damier[LIGNE][COLONNE]=0;
     }
     //L'ordi a maitenant choisi un endroit

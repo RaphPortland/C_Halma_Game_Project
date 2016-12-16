@@ -68,24 +68,28 @@ void fonctionmode1(){
     damier[11][14]=2;
     
     //affichage du plateau de jeu
-    int bool1=1;
+    int bool1=0;
     int m=1;
+    int Joueurquijoue=0;
+
     do {
            fonctionaffichagepion(damier, 16, 16);
-        int Joueurquijoue=m%2;
-        if (Joueurquijoue!=0)
+        int Aquiletour=m%2;
+        if (Aquiletour!=0)
         {
             printf("\nAu joueur 1 de jouer\n");
             fonctiondedeplacementdepionsdujoueurI(damier, 1);
+            Joueurquijoue=1;
         }
             else {
             printf("\nAu joueur 2 de jouer\n");
             fonctiondedeplacementdepionsdujoueurI(damier, 2);
-                
+            Joueurquijoue=2;
         }
         m++;
+    detectiondevictoire(damier, Joueurquijoue);
     system("clear");
-    } while (bool1==1);
+    } while (bool1==0);
 }
     
     

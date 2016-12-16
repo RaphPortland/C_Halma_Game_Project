@@ -15,14 +15,14 @@
 void fonctionmode1();
 void fonctionmode2();
 void fonctionmode3();
-void fonctionmode4();
+//void fonctionmode4();
 
 
 
 int main() {
-	printf("Bievenue dans le jeu de Halma \n");
+	printf("                                     Bievenue dans le jeu de Halma \n");
 	int bool=0;
-
+    fonctionturorielmode1();
 	//Menu Principal
 while (bool==0) {
 	
@@ -48,7 +48,7 @@ while (bool==0) {
             break;
 		case 4:
             bool=1;
-            fonctionmode4();
+            printf("fonctionmode4()");
 		break;
 		default: 
 			bool=0;

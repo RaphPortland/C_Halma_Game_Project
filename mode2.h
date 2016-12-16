@@ -17,4 +17,5 @@
 void fonctionmode2();
 void fonctionaffichagepion(int damier[16][16], int ibis, int jbis);
 void fonctiondedeplacementdepionsdujoueurI(int damier[16][16], int Joueurquijoue);
-void fonctiondeplacementparlordi(int damier[16][16]);
+void fonctiondeplacementparlordi(int damier[16][16], int numerodejoueur);
+int detectiondevictoire (int damier[16][16], int numerodujoueur);

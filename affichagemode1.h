@@ -14,4 +14,4 @@
 
 #endif /* affichagemode1_h */
 void fonctionaffichagepion(int damier[16][16], int ibis, int jbis);
-
+void fonctionturorielmode1();
