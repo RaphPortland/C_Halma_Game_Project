@@ -9,7 +9,7 @@
 #include "mode4.h"
 
 
-void fonctionmode4 (){
+/*void fonctionmode4 (){
 
 
     //Rempliisage de tout le tableau avec 0
@@ -68,22 +68,22 @@ void fonctionmode4 (){
     //affichage du plateau de jeu
     int bool1=1;
     int m=1;
+    int Joueurquijoue=0;
     do {
         fonctionaffichagepion(damier, 16, 16);
-        int Joueurquijoue=m%2;
-        if (Joueurquijoue!=0)
+        int Aquiletour=m%2;
+        if (Aquiletour!=0)
         {
             printf("\nAu joueur 1 de jouer\n");
-            fonctiondeplacementparlordi(damier);
+            fonctiondeplacementparlordi(damier, 1);
         }
         else {
             printf("\nAu joueur 2 de jouer\n");
-            fonctiondeplacementparlordi(damier);
-            
-
+            fonctiondeplacementparlordi(damier, 2);
+            printf("Coucou un pion a bouger et ça va recommencez\n");
         }
         m++;
-        printf("Coucou un pion a bouger et ça va recommencez\n");
+        detectiondevictoire (damier, Joueurquijoue);
         system("clear");
     } while (bool1==1);
 
@@ -91,3 +91,4 @@ void fonctionmode4 (){
 
 
 }
+*/

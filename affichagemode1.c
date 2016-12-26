@@ -23,7 +23,7 @@ void fonctionaffichagepion(int damier[16][16], int tailleI, int tailleJ){
             printf("%d  ", damier[ibis][jbis]);
         }
     }
-    
+    printf("\n");
 }
 
 void fonctionturorielmode1(){

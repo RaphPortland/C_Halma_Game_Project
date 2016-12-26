@@ -1,6 +1,7 @@
 #include "mode2.h"
 #include "time.h"
 #include <stdlib.h>
+#include <unistd.h>
 void fonctionmode2(){
     //Rempliisage de tout le tableau avec 0
     int damier[16][16];
@@ -105,6 +106,20 @@ COLONNEARRIVE=rand()%16;
         t++;
     }
     printf("Ligne : %d et colonne %d sont les coordonés du point de depart\n", LIGNE, COLONNE);
+        for (int i=0; i<10; i++){
+
+            if (i%2==1){
+                damier[LIGNE][COLONNE]=0;
+            }
+            if (i%2==0){
+                damier[LIGNE][COLONNE]=numerodejoueur;
+            }
+
+            fonctionaffichagepion(damier, 16, 16);
+            sleep(0.5);
+
+
+        }
 //L'ordi a choisi le pions qu'il veut bouger
 //Maintenant l'ordi va effectuer un déplacement du pions
 int bool1=1;
@@ -139,7 +154,18 @@ int bool1=1;
             //}
         }
         printf("Ligne : %d et Arrive : %d sont les coordonnées du point d'arriver\n", LIGNEARRIVE, COLONNEARRIVE);
-    damier[LIGNEARRIVE][COLONNEARRIVE]=numerodejoueur;
-    damier[LIGNE][COLONNE]=0;
+        for (int i=0; i<5; i++){
+
+            if (i%2==1){
+                damier[LIGNEARRIVE][COLONNEARRIVE]=numerodejoueur;
+            }
+            if (i%2==0){
+                damier[LIGNEARRIVE][COLONNEARRIVE]=0;
+            }
+                fonctionaffichagepion(damier, 16, 16);
+                sleep(0.5);
+            }
+
+    
     }
     //L'ordi a maitenant choisi un endroit
