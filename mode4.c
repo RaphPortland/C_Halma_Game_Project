@@ -9,7 +9,7 @@
 #include "mode4.h"
 
 
-/*void fonctionmode4 (){
+void fonctionmode4 (){
 
 
     //Rempliisage de tout le tableau avec 0
@@ -91,4 +91,3 @@
 
 
 }
-*/

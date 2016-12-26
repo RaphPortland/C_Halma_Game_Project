@@ -48,7 +48,7 @@ while (bool==0) {
             break;
 		case 4:
             bool=1;
-            printf("fonctionmode4()");
+            fonctionmode4();
 		break;
 		default: 
 			bool=0;
