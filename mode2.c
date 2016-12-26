@@ -105,7 +105,7 @@ if (numerodejoueur==2){
                     
                 }
             }
-         printf("La valeur de LIGNE est %d, La valeur de COLLONE est %d\n", LIGNE, COLONNE);
+         //printf("La valeur de LIGNE est %d, La valeur de COLLONE est %d\n", LIGNE, COLONNE);
         t++;
     } while ( bool12==1);
 }
@@ -130,12 +130,12 @@ if (numerodejoueur==1){
                     
                 }
             }
-         printf("La valeur de LIGNE est %d, La valeur de COLLONE est %d\n", LIGNE, COLONNE);
+         //printf("La valeur de LIGNE est %d, La valeur de COLLONE est %d\n", LIGNE, COLONNE);
         t++;
     } while ( bool12==1);
 }
 
-    printf("LIGNE DEPART  : %d , COLONNE DEPART : %d \n", LIGNE, COLONNE);
+    //printf("LIGNE DEPART  : %d , COLONNE DEPART : %d \n", LIGNE, COLONNE);
 
 //Affichage avec clignotement 
     printf("Ligne : %d et colonne %d sont les coordonés du point de depart\n", LIGNE, COLONNE);
