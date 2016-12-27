@@ -1,4 +1,4 @@
-//
+
 //  mode2.h
 //  Projetinfo
 //
@@ -8,10 +8,9 @@
 
 #ifndef mode2_h
 #define mode2_h
-#include "lesfctdedeplacementdespions.h"
+//#include "lesfctdedeplacementdespions.h"
 #include "affichagemode1.h"
 #include <stdio.h>
-
 
 #endif /* mode2_h */
 void fonctionmode2();

@@ -1,10 +1,3 @@
-//
-//  damier.h
-//  Projetinfo
-//
-//  Created by Partouche on 10/11/2016.
-//  Copyright © 2016 Partouche. All rights reserved.
-//
 
 #ifndef damier_h
 #define damier_h

@@ -42,9 +42,9 @@ void fonctionmode4 (){
     damier[3][2]=1;
     damier[4][0]=1;
     damier[4][1]=1;
-    
+
     //Remplissage du 2 eme jeu de pions dans le tableau damier lES PIONS DU JOUEUR 2
-    
+
     damier[15][15]=2;
     damier[15][14]=2;
     damier[15][13]=2;
@@ -64,7 +64,7 @@ void fonctionmode4 (){
     damier[12][13]=2;
     damier[11][15]=2;
     damier[11][14]=2;
-    
+
     //affichage du plateau de jeu
     int bool1=1;
     int m=1;
@@ -74,20 +74,20 @@ void fonctionmode4 (){
         int Aquiletour=m%2;
         if (Aquiletour!=0)
         {
-            printf("\nAu joueur 1 de jouer\n");
+            printf("\nA l'ordi 1 de jouer\n");
             fonctiondeplacementparlordi(damier, 1);
         }
         else {
-            printf("\nAu joueur 2 de jouer\n");
+            printf("\nA l'ordi 2 de jouer\n");
             fonctiondeplacementparlordi(damier, 2);
             printf("Coucou un pion a bouger et ça va recommencez\n");
         }
         m++;
+        if (m%4==0){
+        sleep(4);
+        }
         detectiondevictoire (damier, Joueurquijoue);
         system("clear");
     } while (bool1==1);
-
-
-
 
 }

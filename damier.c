@@ -1,10 +1,4 @@
-//
-//  damier.c
-//  Projetinfo
-//
-//  Created by Partouche on 10/11/2016.
-//  Copyright © 2016 Partouche. All rights reserved.
-//
+
 #include<stdio.h>
 #include<stdlib.h>
 #include "damier.h"
@@ -12,8 +6,8 @@
 
 
 void fonctionmode1(){
-    
-    
+
+
     //Rempliisage de tout le tableau avec 0
     int damier[16][16];
     int i,j;
@@ -44,9 +38,9 @@ void fonctionmode1(){
     damier[3][2]=1;
     damier[4][0]=1;
     damier[4][1]=1;
-    
+
     //Remplissage du 2 eme jeu de pions dans le tableau damier lES PIONS DU JOUEUR 2
-    
+
     damier[15][15]=2;
     damier[15][14]=2;
     damier[15][13]=2;
@@ -66,7 +60,7 @@ void fonctionmode1(){
     damier[12][13]=2;
     damier[11][15]=2;
     damier[11][14]=2;
-    
+
     //affichage du plateau de jeu
     int bool1=0;
     int m=1;
@@ -91,16 +85,3 @@ void fonctionmode1(){
     system("clear");
     } while (bool1==0);
 }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-

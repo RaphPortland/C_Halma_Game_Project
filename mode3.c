@@ -1,17 +1,9 @@
-//
-//  mode3.c
-//  Projetinfo
-//
-//  Created by Partouche on 19/11/2016.
-//  Copyright © 2016 Partouche. All rights reserved.
-//
-
 #include "mode3.h"
 
 
 void fonctionmode3(){
-    
-    
+
+
     //Rempliisage de tout le tableau avec 0
     int damier[16][16];
     int i,j;
@@ -36,10 +28,10 @@ void fonctionmode3(){
     damier[2][2]=1;
     damier[3][0]=1;
     damier[3][1]=1;
-    
-    
+
+
     //Remplissage du 2 eme jeu de pions dans le tableau damier lES PIONS DU JOUEUR 2
-    
+
     damier[15][15]=2;
     damier[15][14]=2;
     damier[15][13]=2;
@@ -53,9 +45,9 @@ void fonctionmode3(){
     damier[13][13]=2;
     damier[12][15]=2;
     damier[12][14]=2;
-    
+
     // Remplissage du 3eme jeu de pions dans le tableau LES PIONS DU JOUEUR 4
-    
+
     damier[15][0]=3;
     damier[15][1]=3;
     damier[15][2]=3;
@@ -69,9 +61,9 @@ void fonctionmode3(){
     damier[13][2]=3;
     damier[12][0]=3;
     damier[12][1]=3;
-    
+
     //Remplissage du 4 eme jeu de pions dans le tableau LES PIONS DU JOUEUR 3
-    
+
     damier[0][15]=4;
     damier[0][14]=4;
     damier[0][13]=4;
@@ -85,8 +77,8 @@ void fonctionmode3(){
     damier[2][13]=4;
     damier[3][15]=4;
     damier[3][14]=4;
-    
-    
+
+
     //affichage du plateau de jeu a 4 joueur et deplacement de pions Verifié
     int bool1=1;
     int m=1;
@@ -106,13 +98,13 @@ void fonctionmode3(){
             fonctiondedeplacementdepionsdujoueurI(damier, 2);
             Joueurquijoue=2;
         }
-        else if (Aquiletour==3) 
+        else if (Aquiletour==3)
         {
             printf("\nAu joueur 3 de jouer\n");
             fonctiondedeplacementdepionsdujoueurI(damier, 3);
             Joueurquijoue=3;
         }
-        else 
+        else
         {
             printf("\nAu joueur 4 de jouer\n");
             fonctiondedeplacementdepionsdujoueurI(damier, 4);
