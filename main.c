@@ -1,3 +1,9 @@
+//
+//  main.c
+//  Projetinfo
+//
+//  Created by Partouche on 10/11/2016.
+//  Copyright © 2016 Partouche. All rights reserved.
 #include <stdio.h>
 #include <time.h>
 #include "damier.h"
@@ -11,7 +17,7 @@
 void fonctionmode1();
 void fonctionmode2();
 void fonctionmode3();
-//void fonctionmode4();
+void fonctionmode4();
 
 
 
@@ -28,7 +34,6 @@ while (bool==0) {
     printf("3. Voulez vous jouer a quatres personne : 3\n");
     printf("4. Voulez vous voir jouer deux ordinateur c.a.d mode Machine vs Machine : 4\n");
     int nombredejoueur;
-    srand(time(NULL));
     scanf("%d" ,&nombredejoueur);
 
 	switch (nombredejoueur){

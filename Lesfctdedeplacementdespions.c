@@ -1,11 +1,18 @@
+//
+//  Lesfctverification.c
+//  Projetinfo
+//
+//  Created by Partouche on 19/11/2016.
+//  Copyright © 2016 Partouche. All rights reserved.
+//
 
 #include "Lesfctdedeplacementdespions.h"
 
-void fonctiondedeplacementdepionsdujoueurI(int damier[16][16], int Joueurquijoue){
+void fonctiondedeplacementdepionsdujoueurI(int damier[18][18], int Joueurquijoue){
 
 
 
-	printf("Choissiez un pion :\n");
+    printf("Choissiez un pion :\n");
     int LIGNE, COLONNE;
     int LIGNEARRIVE = 0, COLONNEARRIVE=0;
     int bool3=0;
@@ -19,12 +26,15 @@ void fonctiondedeplacementdepionsdujoueurI(int damier[16][16], int Joueurquijoue
         }
         else if (damier[LIGNE][COLONNE]==Joueurquijoue)
         {
-        	bool3=1;
+            if ((damier[LIGNE-1][COLONNE]== 0) || (damier[LIGNE+1][COLONNE] == 0) || (damier[LIGNE][COLONNE-1]==0) || (damier[LIGNE][COLONNE+1]==0) || (damier[LIGNE+1][COLONNE-1]==0) || (damier[LIGNE-1][COLONNE-1]==0) || (damier[LIGNE-1][COLONNE+1]==0) || (damier[LIGNE+1][COLONNE+1]==0))
+            {
+                bool3=1;
+            }
+            else {
+                printf("Vous ne pourrez pas faire de déplacment avec le pion choisi Veuillez en choisir un nouveau \n");
+                bool3=0;
+            }
         }
-        else {
-        	bool3=0;
-        }
-
 
     } while (bool3==0);
 
@@ -170,7 +180,7 @@ void fonctiondedeplacementdepionsdujoueurI(int damier[16][16], int Joueurquijoue
 
 }
 
-int fonctionsautadjacent(int damier[16][16], int Joueurquijoue, int *LIGNE, int *COLONNE, int *LIGNEARRIVE, int *COLONNEARRIVE ){
+int fonctionsautadjacent(int damier[18][18], int Joueurquijoue, int *LIGNE, int *COLONNE, int *LIGNEARRIVE, int *COLONNEARRIVE ){
     int bool18=0;
     int sautx;
     int RETOUR=0;
@@ -201,158 +211,157 @@ int fonctionsautadjacent(int damier[16][16], int Joueurquijoue, int *LIGNE, int 
     return RETOUR;
 }
 
-int detectiondevictoire (int damier[16][16], int numerodujoueur) {
+int detectiondevictoire (int damier[18][18], int numerodujoueur, int nombredejoueur) {
 //detection de Victoire a  2 joueur
     int victoire=0;
-    if (numerodujoueur==1)
-    {
+    if (nombredejoueur==2){
+        if (numerodujoueur==1)
+        {
 
-        if (damier[15][15]==1 &&
-            damier[15][14]==1 &&
-            damier[15][13]==1 &&
-            damier[15][12]==1 &&
-            damier[15][11]==1 &&
-            damier[14][15]==1 &&
-            damier[14][14]==1 &&
-            damier[14][13]==1 &&
-            damier[14][12]==1 &&
-            damier[14][11]==1 &&
-            damier[13][15]==1 &&
-            damier[13][14]==1 &&
-            damier[13][13]==1 &&
-            damier[13][12]==1 &&
-            damier[12][15]==1 &&
-            damier[12][14]==1 &&
-            damier[12][13]==1 &&
-            damier[11][15]==1 &&
-            damier[11][14]==1) {
+            if (damier[16][16]==1 && damier[16][15]==1 &&
+                damier[16][14]==1 && 
+                damier[16][13]==1 && 
+                damier[16][12]==1 && 
+                damier[15][16]==1 && 
+                damier[15][15]==1 && 
+                damier[15][14]==1 && 
+                damier[15][13]==1 && 
+                damier[15][12]==1 && 
+                damier[14][16]==1 && 
+                damier[14][15]==1 && 
+                damier[14][14]==1 && 
+                damier[14][13]==1 && 
+                damier[13][16]==1 && 
+                damier[13][15]==1 && 
+                damier[13][14]==1 && 
+                damier[12][16]==1 && 
+                damier[12][15]==1 ) {
 
-            printf("Bravo au joueur 1 qui a gagner\n");
-            victoire=1;
-        }
-
-    }
-
-    if (numerodujoueur==2){
-
-        if (damier[0][0]==2 &&
-        damier[0][1]==2 &&
-        damier[0][2]==2 &&
-        damier[0][3]==2 &&
-        damier[0][4]==2 &&
-        damier[1][0]==2 &&
-        damier[1][1]==2 &&
-        damier[1][2]==2 &&
-        damier[1][3]==2 &&
-        damier[1][4]==2 &&
-        damier[2][0]==2 &&
-        damier[2][1]==2 &&
-        damier[2][2]==2 &&
-        damier[2][3]==2 &&
-        damier[3][0]==2 &&
-        damier[3][1]==2 &&
-        damier[3][2]==2 &&
-        damier[4][0]==2 &&
-        damier[4][1]==2){
-
-            printf("Bravo au joueur 2 qui a gagner\n");
-            victoire=1;
+                printf("Bravo au joueur 1 qui a gagner\n");
+                victoire=1;
+            }
 
         }
 
+        if (numerodujoueur==2){
 
-    }
+            if (  damier[1][1]==2 && damier[1][2]==2 &&
+                    damier[1][3]==2 && 
+                    damier[1][4]==2 && 
+                    damier[1][5]==2 && 
+                    damier[2][1]==2 && 
+                    damier[2][2]==2 && 
+                    damier[2][3]==2 && 
+                    damier[2][4]==2 && 
+                    damier[2][5]==2 && 
+                    damier[3][1]==2 && 
+                    damier[3][2]==2 && 
+                    damier[3][3]==2 && 
+                    damier[3][4]==2 && 
+                    damier[4][1]==2 && 
+                    damier[4][2]==2 && 
+                    damier[4][3]==2 && 
+                    damier[5][1]==2 && 
+                    damier[5][2]==2 ){
 
-// Detection de victoire a 4 joueur
+                
+                printf("Bravo au joueur 2 qui a gagner\n");
+                victoire=1;
 
-    if (numerodujoueur==1){
-
-        if (damier[15][15]==1 &&
-        damier[15][14]==1 &&
-        damier[15][13]==1 &&
-        damier[15][12]==1 &&
-        damier[14][15]==1 &&
-        damier[14][14]==1 &&
-        damier[14][13]==1 &&
-        damier[14][12]==1 &&
-        damier[13][15]==1 &&
-        damier[13][14]==1 &&
-        damier[13][13]==1 &&
-        damier[12][15]==1 &&
-        damier[12][14]==1){
-
-            printf("Bravo au joueur 1 qui a gagner\n");
-            victoire=1;
-
-        }
-
-    }
-
-    if (numerodujoueur==2){
-
-        if (damier[0][0]==2 &&
-            damier[0][1]==2 &&
-            damier[0][2]==2 &&
-            damier[0][3]==2 &&
-            damier[1][0]==2 &&
-            damier[1][1]==2 &&
-            damier[1][2]==2 &&
-            damier[1][3]==2 &&
-            damier[2][0]==2 &&
-            damier[2][1]==2 &&
-            damier[2][2]==2 &&
-            damier[3][0]==2 &&
-            damier[3][1]==2) {
-
-            printf("Bravo au joueur 2 qui a gagner\n");
-            victoire=1;
+            }
 
 
         }
     }
+    // Detection de victoire a 4 joueur
+    if (nombredejoueur==4){
+        if (numerodujoueur==1){
 
-    if (numerodujoueur==3){
-        if (damier[0][15]==3 &&
-            damier[0][14]==3 &&
-            damier[0][13]==3 &&
-            damier[0][12]==3 &&
-            damier[1][15]==3 &&
-            damier[1][14]==3 &&
-            damier[1][13]==3 &&
-            damier[1][12]==3 &&
-            damier[2][15]==3 &&
-            damier[2][14]==3 &&
-            damier[2][13]==3 &&
-            damier[3][15]==3 &&
-            damier[3][14]==3){
+            if ( damier[16][16]==1 && damier[16][15]==1 && 
+                    damier[16][14]==1 && 
+                    damier[16][13]==1 && 
+                    damier[15][16]==1 && 
+                    damier[15][15]==1 && 
+                    damier[15][14]==1 && 
+                    damier[15][13]==1 && 
+                    damier[14][16]==1 && 
+                    damier[14][15]==1 && 
+                    damier[14][14]==1 && 
+                    damier[13][16]==1 && 
+                    damier[13][15]==1 ){
 
-            printf("Bravo au joueur 3 qui a gagner\n");
-            victoire=1;
+                printf("Bravo au joueur 1 qui a gagner\n");
+                victoire=1;
+
+            }
+
         }
 
-    }
+        if (numerodujoueur==2){
 
-    if (numerodujoueur==4)
-    {
+            if ( damier[1][1]==2 && damier[1][2]==2 && 
+                    damier[1][3]==2 && 
+                    damier[1][4]==2 && 
+                    damier[2][1]==2 && 
+                    damier[2][2]==2 && 
+                    damier[2][3]==2 && 
+                    damier[2][4]==2 && 
+                    damier[3][1]==2 && 
+                    damier[3][2]==2 && 
+                    damier[3][3]==2 && 
+                    damier[4][1]==2 && 
+                    damier[4][2]==2 ) {
 
-        if (damier[15][0]==4 &&
-        damier[15][1]==4 &&
-        damier[15][2]==4 &&
-        damier[15][3]==4 &&
-        damier[14][0]==4 &&
-        damier[14][1]==4 &&
-        damier[14][2]==4 &&
-        damier[14][3]==4 &&
-        damier[13][0]==4 &&
-        damier[13][1]==4 &&
-        damier[13][2]==4 &&
-        damier[12][0]==4 &&
-        damier[12][1]==4){
+                printf("Bravo au joueur 2 qui a gagner\n");
+                victoire=1;
 
-            printf("Bravo au joueur 4 qui a gagner\n");
-            victoire=1;
+
+            }
         }
 
+        if (numerodujoueur==3){
+            if (damier[1][16]==3 &&             
+                damier[1][15]==3 &&
+                damier[1][14]==3 &&
+                damier[1][13]==3 &&
+                damier[2][16]==3 &&
+                damier[2][15]==3 &&
+                damier[2][14]==3 &&
+                damier[2][13]==3 &&
+                damier[3][16]==3 &&
+                damier[3][15]==3 &&
+                damier[3][14]==3 &&
+                damier[4][16]==3 &&
+                damier[4][15]==3){
+
+                printf("Bravo au joueur 3 qui a gagner\n");
+                victoire=1;
+            }
+
+        }
+
+        if (numerodujoueur==4)
+        {
+
+            if (damier[16][1]==4 &&
+                damier[16][2]==4 &&
+                damier[16][3]==4 &&
+                damier[16][4]==4 &&
+                damier[15][1]==4 &&
+                damier[15][2]==4 &&
+                damier[15][3]==4 &&
+                damier[15][4]==4 &&
+                damier[14][1]==4 &&
+                damier[14][2]==4 &&
+                damier[14][3]==4 &&
+                damier[13][1]==4 &&
+                damier[13][2]==4){
+
+                printf("Bravo au joueur 4 qui a gagner\n");
+                victoire=1;
+            }
+
+        }
     }
 
 return victoire;

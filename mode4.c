@@ -13,64 +13,78 @@ void fonctionmode4 (){
 
 
     //Rempliisage de tout le tableau avec 0
-    int damier[16][16];
+   int damier[18][18];
     int i,j;
-    for (i=0;i<16;i++)
+    for (i=0;i<18;i++)
     {
-        for (j=0;j<16;j++)
+        for (j=0;j<18;j++)
         {
             damier[i][j]=0;
         }
     }
-    //Remplissage du 1er jeu de pions dans le tableauu damier LES PIONS 1
-    damier[0][0]=1;
-    damier[0][1]=1;
-    damier[0][2]=1;
-    damier[0][3]=1;
-    damier[0][4]=1;
-    damier[1][0]=1;
-    damier[1][1]=1;
+    for (i=0; i<18; i++){
+        j=0;
+        damier[i][j]=8;
+    }  
+    for (j=0; j<18; j++){
+        i=0;
+        damier[i][j]=8;
+    }
+    for (i=0; i<18; i++){
+        j=17;
+        damier[i][j]=8;
+    }
+    for (j=0; j<18; j++){
+        i=17;
+        damier[i][j]=8;
+    }
+     //Remplissage du 1er jeu de pions dans le tableauu damier LES PIONS 1
+     damier[1][1]=1;
     damier[1][2]=1;
     damier[1][3]=1;
     damier[1][4]=1;
-    damier[2][0]=1;
+    damier[1][5]=1;
     damier[2][1]=1;
     damier[2][2]=1;
     damier[2][3]=1;
-    damier[3][0]=1;
+    damier[2][4]=1;
+    damier[2][5]=1;
     damier[3][1]=1;
     damier[3][2]=1;
-    damier[4][0]=1;
+    damier[3][3]=1;
+    damier[3][4]=1;
     damier[4][1]=1;
-
+    damier[4][2]=1;
+    damier[4][3]=1;
+    damier[5][1]=1;
+    damier[5][2]=1;
     //Remplissage du 2 eme jeu de pions dans le tableau damier lES PIONS DU JOUEUR 2
-
+    damier[16][16]=2;
+    damier[16][15]=2;
+    damier[16][14]=2;
+    damier[16][13]=2;
+    damier[16][12]=2;
+    damier[15][16]=2;
     damier[15][15]=2;
     damier[15][14]=2;
     damier[15][13]=2;
     damier[15][12]=2;
-    damier[15][11]=2;
+    damier[14][16]=2;
     damier[14][15]=2;
     damier[14][14]=2;
     damier[14][13]=2;
-    damier[14][12]=2;
-    damier[14][11]=2;
+    damier[13][16]=2;
     damier[13][15]=2;
     damier[13][14]=2;
-    damier[13][13]=2;
-    damier[13][12]=2;
+    damier[12][16]=2;
     damier[12][15]=2;
-    damier[12][14]=2;
-    damier[12][13]=2;
-    damier[11][15]=2;
-    damier[11][14]=2;
 
     //affichage du plateau de jeu
     int bool1=1;
     int m=1;
     int Joueurquijoue=0;
     do {
-        fonctionaffichagepion(damier, 16, 16);
+        fonctionaffichagepion(damier, 18, 18);
         int Aquiletour=m%2;
         if (Aquiletour!=0)
         {
@@ -84,9 +98,10 @@ void fonctionmode4 (){
         }
         m++;
         if (m%4==0){
-        sleep(4);
+        //sleep(4);
         }
-        detectiondevictoire (damier, Joueurquijoue);
+        printf("Voici le %d coup jouer par un ordi donc la moitié pour 1 joueur", m-1);
+        detectiondevictoire (damier, Joueurquijoue, 2);
         system("clear");
     } while (bool1==1);
 

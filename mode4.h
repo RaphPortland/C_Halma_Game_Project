@@ -4,7 +4,7 @@
 //
 //  Created by Partouche on 12/12/2016.
 //  Copyright © 2016 Partouche. All rights reserved.
-//
+
 #ifndef mode4_h
 #define mode4_h
 
@@ -14,5 +14,5 @@
 #include <stdlib.h>
 #endif /* mode4_h */
 void fonctionmode4 ();
-void fonctiondeplacementparlordi(int damier[16][16], int numerodejoueur);
-int detectiondevictoire (int damier[16][16], int numerodujoueur);
+void fonctiondeplacementparlordi(int damier[18][18], int numerodejoueur);
+int detectiondevictoire (int damier[18][18], int numerodujoueur, int nombredejoueur);

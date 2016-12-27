@@ -9,37 +9,33 @@
 #include "affichagemode1.h"
 
 
-void fonctionaffichagepion(int damier[16][16], int tailleI, int tailleJ){
+void fonctionaffichagepion(int damier[18][18], int tailleI, int tailleJ){
 
 
 
-    couleur("41");
-    printf("     0. 1. 2. 3. 4. 5. 6. 7. 8. 9. 10 11 12 13 14 15\n ");
+   // couleur("41");
+    printf("     1. 2. 3. 4. 5. 6. 7. 8. 9. 10 11 12 13 14 15 16\n ");
     printf("                                                   ");
-    couleur("0");
+    //couleur("0");
     int jbis, ibis;
-    for (ibis=0 ; ibis< tailleI; ibis++)
+    for (ibis=1 ; ibis< tailleI-1; ibis++)
     {
         if (ibis<10){
-            couleur("41");
+            //couleur("41");
             printf("\n %d. ", ibis);
-            couleur("0");
+           // couleur("0");
             printf(" ");
         }
         else{
-            couleur("41");
+            //couleur("41");
             printf("\n %d.", ibis);
-            couleur("0");
+            //couleur("0");
             printf(" ");
         }
-        for (jbis=0 ;jbis<tailleJ ; jbis++)
-        {
-        if (jbis%2==0){
-        //couleur("43");
-        }
-
+        for (jbis=1; jbis<tailleJ-1; jbis++){
             printf("%d  ", damier[ibis][jbis]);
         }
+        
     }
     printf("\n");
 }

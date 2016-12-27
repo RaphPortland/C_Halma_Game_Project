@@ -1,3 +1,11 @@
+//
+//  mode3.c
+//  Projetinfo
+//
+//  Created by Partouche on 19/11/2016.
+//  Copyright © 2016 Partouche. All rights reserved.
+//
+
 #include "mode3.h"
 
 
@@ -5,78 +13,95 @@ void fonctionmode3(){
 
 
     //Rempliisage de tout le tableau avec 0
-    int damier[16][16];
+    int damier[18][18];
     int i,j;
-    for (i=0;i<16;i++)
+    for (i=0;i<18;i++)
     {
-        for (j=0;j<16;j++)
+        for (j=0;j<18;j++)
         {
             damier[i][j]=0;
         }
     }
+
+    for (i=0; i<18; i++){
+        j=0;
+        damier[i][j]=8;
+    }  
+    for (j=0; j<18; j++){
+        i=0;
+        damier[i][j]=8;
+    }
+    for (i=0; i<18; i++){
+        j=17;
+        damier[i][j]=8;
+    }
+    for (j=0; j<18; j++){
+        i=17;
+        damier[i][j]=8;
+    }
     //Remplissage du 1er jeu de pions dans le tableauu damier LES PIONS 1
-    damier[0][0]=1;
-    damier[0][1]=1;
-    damier[0][2]=1;
-    damier[0][3]=1;
-    damier[1][0]=1;
     damier[1][1]=1;
     damier[1][2]=1;
     damier[1][3]=1;
-    damier[2][0]=1;
+    damier[1][4]=1;
     damier[2][1]=1;
     damier[2][2]=1;
-    damier[3][0]=1;
+    damier[2][3]=1;
+    damier[2][4]=1;
     damier[3][1]=1;
+    damier[3][2]=1;
+    damier[3][3]=1;
+    damier[4][1]=1;
+    damier[4][2]=1;
 
 
     //Remplissage du 2 eme jeu de pions dans le tableau damier lES PIONS DU JOUEUR 2
 
+    damier[16][16]=2;
+    damier[16][15]=2;
+    damier[16][14]=2;
+    damier[16][13]=2;
+    damier[15][16]=2;
     damier[15][15]=2;
     damier[15][14]=2;
     damier[15][13]=2;
-    damier[15][12]=2;
+    damier[14][16]=2;
     damier[14][15]=2;
     damier[14][14]=2;
-    damier[14][13]=2;
-    damier[14][12]=2;
+    damier[13][16]=2;
     damier[13][15]=2;
-    damier[13][14]=2;
-    damier[13][13]=2;
-    damier[12][15]=2;
-    damier[12][14]=2;
 
     // Remplissage du 3eme jeu de pions dans le tableau LES PIONS DU JOUEUR 4
 
-    damier[15][0]=3;
+    damier[16][1]=3;
+    damier[16][2]=3;
+    damier[16][3]=3;
+    damier[16][4]=3;
     damier[15][1]=3;
     damier[15][2]=3;
     damier[15][3]=3;
-    damier[14][0]=3;
+    damier[15][4]=3;
     damier[14][1]=3;
     damier[14][2]=3;
     damier[14][3]=3;
-    damier[13][0]=3;
     damier[13][1]=3;
     damier[13][2]=3;
-    damier[12][0]=3;
-    damier[12][1]=3;
 
     //Remplissage du 4 eme jeu de pions dans le tableau LES PIONS DU JOUEUR 3
 
-    damier[0][15]=4;
-    damier[0][14]=4;
-    damier[0][13]=4;
-    damier[0][12]=4;
+    damier[1][16]=4;
     damier[1][15]=4;
     damier[1][14]=4;
     damier[1][13]=4;
-    damier[1][12]=4;
+    damier[2][16]=4;
     damier[2][15]=4;
     damier[2][14]=4;
     damier[2][13]=4;
+    damier[3][16]=4;
     damier[3][15]=4;
     damier[3][14]=4;
+    damier[4][16]=4;
+    damier[4][15]=4;
 
 
     //affichage du plateau de jeu a 4 joueur et deplacement de pions Verifié
@@ -84,7 +109,7 @@ void fonctionmode3(){
     int m=1;
     int Joueurquijoue=0;
     do {
-        fonctionaffichagepion(damier, 16, 16);
+        fonctionaffichagepion(damier, 18, 18);
         int Aquiletour=m%4;
         if (Aquiletour==1)
         {
@@ -111,7 +136,7 @@ void fonctionmode3(){
             Joueurquijoue=4;
         }
         m++;
-        detectiondevictoire (damier, Joueurquijoue);
+        detectiondevictoire (damier, Joueurquijoue, 4);
         system("clear\n");
     } while (bool1==1);
 }
