@@ -100,7 +100,7 @@ void fonctionmode4 (){
         if (m%4==0){
         //sleep(4);
         }
-        printf("Voici le %d coup jouer par un ordi donc la moitié pour 1 joueur", m-1);
+        printf("Voici le %d coup jouer par un ordi donc la moitié pour 1 joueur\n", m-1);
         detectiondevictoire (damier, Joueurquijoue, 2);
         system("clear");
     } while (bool1==1);

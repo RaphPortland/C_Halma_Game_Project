@@ -102,22 +102,22 @@ int m, t;
 m=rand()%16+1;
 t=rand()%16+1;
 
-// ON CHERCHE LE PIONS DE DEPART !!!
-
+// ON CHERCHE LE PIONS DE DEPART POUR LE JOUEUR 3 !!
+if (numerodejoueur==2){
     int autorisation=0;
 
     while (autorisation==0){
 
         LIGNE=m%16+1;
         COLONNE=t%16+1;
-        printf("Les coordonées de LIGNE %d et COLONNE %d\n", LIGNE, COLONNE);
+        //printf("Les coordonées de LIGNE %d et COLONNE %d\n", LIGNE, COLONNE);
 
         if ((damier[LIGNE-1][COLONNE]== 0) || (damier[LIGNE+1][COLONNE] == 0) || (damier[LIGNE][COLONNE-1]==0) || (damier[LIGNE][COLONNE+1]==0) || (damier[LIGNE+1][COLONNE-1]==0) || (damier[LIGNE-1][COLONNE-1]==0) || (damier[LIGNE-1][COLONNE+1]==0) || (damier[LIGNE+1][COLONNE+1]==0))
             {
                 if (damier[LIGNE][COLONNE]==numerodejoueur){
 
                     autorisation=1;
-                    printf("Nous venons d'autoriser la prise de ce pion %d %d \n", LIGNE, COLONNE);
+                    //printf("Nous venons d'autoriser la prise de ce pion %d %d \n", LIGNE, COLONNE);
 
                 }
         }
@@ -130,7 +130,7 @@ t=rand()%16+1;
     };
 
 
-// ON CHERCHE UN ENDROIT D ARRIVER !!!
+// ON CHERCHE UN ENDROIT D ARRIVER POUR LE JOUEUR 2!!!
 m=rand()%16+1;
 t=rand()%16+1;
 int autorisation2=0;
@@ -139,7 +139,7 @@ int autorisation2=0;
 
         LIGNEARRIVE=m%16+1;
         COLONNEARRIVE=t%16+1;
-        printf("Les coordonées de LIGNE ARRIVER %d et COLONNE ARRIVER %d\n", LIGNEARRIVE, COLONNEARRIVE);
+        //printf("Les coordonées de LIGNE ARRIVER %d et COLONNE ARRIVER %d\n", LIGNEARRIVE, COLONNEARRIVE);
 
         if (((LIGNEARRIVE==LIGNE+1 && COLONNEARRIVE==COLONNE-1) || (LIGNEARRIVE==LIGNE+1 && COLONNEARRIVE==COLONNE+1) || (LIGNEARRIVE==LIGNE && COLONNEARRIVE==COLONNE+1)
                 || (LIGNEARRIVE==LIGNE && COLONNEARRIVE==COLONNE-1) || (LIGNEARRIVE==LIGNE+1 && COLONNEARRIVE==COLONNE) || (LIGNEARRIVE==LIGNE+1 && COLONNEARRIVE==COLONNE-1)
@@ -148,7 +148,7 @@ int autorisation2=0;
                 if (damier[LIGNEARRIVE][COLONNEARRIVE]==0)
                 {
                     autorisation2=1;
-                    printf("Nous venons d'autoriser le deplacement de ce pion %d %d \n", LIGNEARRIVE, COLONNEARRIVE);
+                    //printf("Nous venons d'autoriser le deplacement de ce pion %d %d \n", LIGNEARRIVE, COLONNEARRIVE);
 
                 }
         }
@@ -159,6 +159,67 @@ int autorisation2=0;
 
     t++;
     };
+}
+// MAINTEANT POUR LE JOUEUR 1
+if (numerodejoueur==1){
+    int autorisation=0;
+
+    while (autorisation==0){
+
+        LIGNE=16-m%16;
+        COLONNE=16-t%16;
+        //printf("Les coordonées de LIGNE %d et COLONNE %d\n", LIGNE, COLONNE);
+
+        if ((damier[LIGNE-1][COLONNE]== 0) || (damier[LIGNE+1][COLONNE] == 0) || (damier[LIGNE][COLONNE-1]==0) || (damier[LIGNE][COLONNE+1]==0) || (damier[LIGNE+1][COLONNE-1]==0) || (damier[LIGNE-1][COLONNE-1]==0) || (damier[LIGNE-1][COLONNE+1]==0) || (damier[LIGNE+1][COLONNE+1]==0))
+            {
+                if (damier[LIGNE][COLONNE]==numerodejoueur){
+
+                    autorisation=1;
+                    //printf("Nous venons d'autoriser la prise de ce pion %d %d \n", LIGNE, COLONNE);
+
+                }
+        }
+
+        if (t%16+1==8){
+            m++;
+        }
+
+    t++;
+    };
+
+
+// ON CHERCHE UN ENDROIT D ARRIVER POUR LE JOUEUR 1!!!
+m=rand()%16+1;
+t=rand()%16+1;
+int autorisation2=0;
+
+    while (autorisation2==0){
+
+        LIGNEARRIVE=16-m%16;
+        COLONNEARRIVE=16-t%16;
+        //printf("Les coordonées de LIGNE ARRIVER %d et COLONNE ARRIVER %d\n", LIGNEARRIVE, COLONNEARRIVE);
+
+        if (((LIGNEARRIVE==LIGNE+1 && COLONNEARRIVE==COLONNE-1) || (LIGNEARRIVE==LIGNE+1 && COLONNEARRIVE==COLONNE+1) || (LIGNEARRIVE==LIGNE && COLONNEARRIVE==COLONNE+1)
+                || (LIGNEARRIVE==LIGNE && COLONNEARRIVE==COLONNE-1) || (LIGNEARRIVE==LIGNE+1 && COLONNEARRIVE==COLONNE) || (LIGNEARRIVE==LIGNE+1 && COLONNEARRIVE==COLONNE-1)
+                || (LIGNEARRIVE==LIGNE-1 && COLONNEARRIVE==COLONNE-1) || (LIGNEARRIVE==LIGNE-1 && COLONNEARRIVE==COLONNE ))){
+
+                if (damier[LIGNEARRIVE][COLONNEARRIVE]==0)
+                {
+                    autorisation2=1;
+                    //printf("Nous venons d'autoriser le deplacement de ce pion %d %d \n", LIGNEARRIVE, COLONNEARRIVE);
+
+                }
+        }
+
+        if (t%16+1==8){
+            m++;
+        }
+
+    t++;
+    };
+}
+
+
 
 
     //Affichage avec clignotement DEPART
