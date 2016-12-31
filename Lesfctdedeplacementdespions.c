@@ -187,8 +187,8 @@ int fonctionsautadjacent(int damier[18][18], int Joueurquijoue, int *LIGNE, int 
 
                 damier[*LIGNE][*COLONNE]=0;
                 damier[*LIGNEARRIVE][*COLONNEARRIVE]=Joueurquijoue;
-                 do {
-                     fonctionaffichagepion(damier, 18, 18);
+                fonctionaffichagepion(damier, 18, 18);                 
+                do {
                     printf("Voulez vous refaire un saut adjacent si celui ci est possible ?\n1. Oui \n2. Non\n");
                      scanf("%d", &sautx);
 
