@@ -33,6 +33,7 @@ while (bool==0) {
     printf("2. Voulez vous jouer a une personne vs l'ordinateur : 2\n");
     printf("3. Voulez vous jouer a quatres personne : 3\n");
     printf("4. Voulez vous voir jouer deux ordinateur c.a.d mode Machine vs Machine : 4\n");
+    printf("5. Voulez vous voir jouer quatres ordinateur entre eux : 5\n");
     int nombredejoueur;
     scanf("%d" ,&nombredejoueur);
 
@@ -53,6 +54,9 @@ while (bool==0) {
             bool=1;
             fonctionmode4();
 		break;
+        case 5:
+            bool=1;
+            fonctionmode5();
 		default:
 			bool=0;
 			printf("Veuillez sélectioner un mode existant c'est a dire compris en 1 et 4 inclus\n");

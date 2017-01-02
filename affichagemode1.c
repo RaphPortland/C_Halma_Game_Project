@@ -45,6 +45,8 @@ void fonctionturorielmode1(){
 
     int jouer=0;
     do {
+        printf("        Bievenue dans le jeu de Halma \n");
+
         printf("\nRégles Generale : \nLe plateau de jeu est composé d’un damier de 16x16 cases de couleurs alternées. Les angles, composés de 19 cases dans le jeu à deux et de 13 cases dans le jeu à quatre, représentent les « maisons », et jouent le rôle de point de départ et en face en diagonale de point d’arrivée.\n\n");
         printf("Les Deplacements:\n     Soit en avançant d'un pas, c'est à dire en se rendant sur une case voisine laissée libre. \n     Soit en sautant par dessus une pièce (adverse ou non), comme à saute-mouton pour se rendre sur une case libre. Un pion peut sauter par dessus plusieurs pions si une case est laissée libre entre chacun de ces pions. Ce type de déplacement est à privilégier pour avancer son pion plus rapidement.");
 
