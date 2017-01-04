@@ -30,6 +30,9 @@ void fonctiondedeplacementdepionsdujoueurI(int damier[18][18], int Joueurquijoue
             {
                 bool3=1;
             }
+            else if ((damier[LIGNE][COLONNE+2]==0 || damier[LIGNE+2][COLONNE+2]==0 || damier[LIGNE+2][COLONNE]==0 || damier[LIGNE+2][COLONNE-2]==0 || damier[LIGNE][COLONNE-2]==0 || damier[LIGNE-2][COLONNE-2]==0 || damier[LIGNE-2][COLONNE]==0 || damier[LIGNE-2][COLONNE+2]==0)){
+                bool3=1;
+            }
             else {
                 printf("Vous ne pourrez pas faire de déplacment avec le pion choisi Veuillez en choisir un nouveau \n");
                 bool3=0;
@@ -118,7 +121,7 @@ void fonctiondedeplacementdepionsdujoueurI(int damier[18][18], int Joueurquijoue
         int bool13=1;
         while (bool13==1 && sautoupas==2 && RETOUR!=1 && sautx==1){          //Boucle pour autoriser le saut
 
-            if (COLONNEARRIVE==COLONNE && LIGNEARRIVE==LIGNE+2 && damier[LIGNEARRIVE-1][COLONNEARRIVE]!=0){
+            if (COLONNEARRIVE==COLONNE && LIGNEARRIVE==LIGNE+2 && damier[LIGNEARRIVE-1][COLONNEARRIVE]!=0 ){
                 bool13=0;
                 RETOUR=fonctionsautadjacent(damier, Joueurquijoue, &LIGNE, &COLONNE, &LIGNEARRIVE, &COLONNEARRIVE);
             }
@@ -141,14 +144,13 @@ void fonctiondedeplacementdepionsdujoueurI(int damier[18][18], int Joueurquijoue
             else if(LIGNEARRIVE==LIGNE-2 && COLONNEARRIVE==COLONNE+2 && damier[LIGNEARRIVE+1][COLONNEARRIVE-1]!=0){
                 bool13=0;
                 RETOUR=fonctionsautadjacent(damier, Joueurquijoue, &LIGNE, &COLONNE, &LIGNEARRIVE, &COLONNEARRIVE);
-
             }
             else if (LIGNEARRIVE==LIGNE+2 && COLONNEARRIVE==COLONNE-2 && damier[LIGNEARRIVE-1][COLONNEARRIVE+1]!=0){
                  bool13=0;
                 RETOUR=fonctionsautadjacent(damier, Joueurquijoue, &LIGNE, &COLONNE, &LIGNEARRIVE, &COLONNEARRIVE);
 
             }
-            else if(LIGNEARRIVE==LIGNE+2 && COLONNEARRIVE==COLONNE+2 && damier[LIGNEARRIVE-1][COLONNEARRIVE-1]!=0)            {
+            else if(LIGNEARRIVE==LIGNE+2 && COLONNEARRIVE==COLONNE+2 && damier[LIGNEARRIVE-1][COLONNEARRIVE-1]!=0){
                 bool13=0;
                 RETOUR=fonctionsautadjacent(damier, Joueurquijoue, &LIGNE, &COLONNE, &LIGNEARRIVE, &COLONNEARRIVE);
             }

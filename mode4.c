@@ -89,18 +89,15 @@ void fonctionmode4 (){
         if (Aquiletour!=0)
         {
             printf("\nA l'ordi 1 de jouer\n");
-            fonctiondeplacementparlordi(damier, 1, 4);
+            fonctiondeplacementparlordi(damier, 1, 4, m-1);
         }
         else {
             printf("\nA l'ordi 2 de jouer\n");
-            fonctiondeplacementparlordi(damier, 2, 4);
+            fonctiondeplacementparlordi(damier, 2, 4, m-1);
             printf("Coucou un pion a bouger et ça va recommencez\n");
         }
         m++;
-        if (m%4==0){
-        //sleep(4);
-        }
-        printf("Voici le %d coup jouer par un ordi donc la moitié pour 1 joueur\n", m-1);
+        printf("Les deux joueurs ont jouer a eux deux %d coup. \n", m-1);
         detectiondevictoire (damier, Joueurquijoue, 2);
         system("clear");
     } while (bool1==1);
@@ -213,25 +210,25 @@ void fonctionmode5 (){
         if (Aquiletour==1)
         {
             printf("\nAu joueur 1 de jouer\n");
-            fonctiondeplacementparlordi(damier, 1, 5);
+            fonctiondeplacementparlordi(damier, 1, 5, m-1);
             Joueurquijoue=1;
         }
         else if(Aquiletour==2)
         {
             printf("\nAu joueur 2 de jouer\n");
-            fonctiondeplacementparlordi(damier, 2, 5);
+            fonctiondeplacementparlordi(damier, 2, 5, m-1);
             Joueurquijoue=2;
         }
         else if (Aquiletour==3)
         {
             printf("\nAu joueur 3 de jouer\n");
-            fonctiondeplacementparlordi(damier, 3, 5);
+            fonctiondeplacementparlordi(damier, 3, 5, m-1);
             Joueurquijoue=3;
         }
         else
         {
             printf("\nAu joueur 4 de jouer\n");
-            fonctiondeplacementparlordi(damier, 4, 5);
+            fonctiondeplacementparlordi(damier, 4, 5, m-1);
             Joueurquijoue=4;
         }
         m++;
