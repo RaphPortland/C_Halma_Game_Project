@@ -17,7 +17,7 @@ void fonctionmode2(){
     for (i=0; i<18; i++){
         j=0;
         damier[i][j]=8;
-    }  
+    }
     for (j=0; j<18; j++){
         i=0;
         damier[i][j]=8;
@@ -77,7 +77,7 @@ void fonctionmode2(){
     int Joueurquijoue=0;
     srand(time(NULL));
     do {
-           fonctionaffichagepion(damier, 18, 18);
+           fonctionaffichagepion(damier, 18, 18, 2);
         int Aquiletour=m%2;
         if (Aquiletour!=0)
         {
@@ -133,7 +133,7 @@ t=rand()%16+1;
             printf("Valeur LIGNE arriver : %d Valeur COLONNE arriver : %d\n", LIGNEARRIVE, COLONNEARRIVE);
 
         }
-        
+
 // Acceptation du pas OK
         if ((damier[LIGNE-1][COLONNE]== 0) || (damier[LIGNE+1][COLONNE] == 0) || (damier[LIGNE][COLONNE-1]==0) || (damier[LIGNE][COLONNE+1]==0) || (damier[LIGNE+1][COLONNE-1]==0) || (damier[LIGNE-1][COLONNE-1]==0) || (damier[LIGNE-1][COLONNE+1]==0) || (damier[LIGNE+1][COLONNE+1]==0))
         {
@@ -226,7 +226,7 @@ int w=rand()%16;
                 COLONNEARRIVE=COLONNE-1;
             }
         }
-        
+
         if (numerodejoueur==4 && j>0){
             LIGNEARRIVE=16-m%16;
             COLONNEARRIVE=t%16+1;
@@ -238,7 +238,7 @@ int w=rand()%16;
             printf("Valeur LIGNE depart : %d Valeur COLONNE depart : %d\n", LIGNE, COLONNE);
 
         }
-        
+
 // Recherche de l'endroit d'arriver tels que ça soit un pas
 
         if (((LIGNEARRIVE==LIGNE+1 && COLONNEARRIVE==COLONNE-1) || (LIGNEARRIVE==LIGNE+1 && COLONNEARRIVE==COLONNE+1) || (LIGNEARRIVE==LIGNE && COLONNEARRIVE==COLONNE+1)
@@ -247,19 +247,19 @@ int w=rand()%16;
 
                 if (damier[LIGNEARRIVE][COLONNEARRIVE]==0)
                 {
-                    autorisation2=1; 
+                    autorisation2=1;
                 }
         }
 
 // Recherche de l'endroit d'arriver tels que ça soit un saut
 
-        if ((COLONNEARRIVE==COLONNE && LIGNEARRIVE==LIGNE+2 && damier[LIGNEARRIVE-1][COLONNEARRIVE]!=0) || 
-            (LIGNEARRIVE==LIGNE-2 && COLONNE==COLONNEARRIVE && damier[LIGNEARRIVE+1][COLONNEARRIVE]!=0) || 
-            (LIGNEARRIVE==LIGNE && COLONNEARRIVE==COLONNE-2 && damier[LIGNEARRIVE][COLONNEARRIVE+1]!=0) || 
-            (LIGNEARRIVE==LIGNE && COLONNEARRIVE==COLONNE+2 && damier[LIGNEARRIVE][COLONNEARRIVE-1]!=0) || 
-            (LIGNEARRIVE==LIGNE-2 && COLONNEARRIVE==COLONNE-2 && damier[LIGNEARRIVE+1][COLONNEARRIVE+1]!=0) || 
-            (LIGNEARRIVE==LIGNE-2 && COLONNEARRIVE==COLONNE+2 && damier[LIGNEARRIVE+1][COLONNEARRIVE-1]!=0) || 
-            (LIGNEARRIVE==LIGNE+2 && COLONNEARRIVE==COLONNE-2 && damier[LIGNEARRIVE-1][COLONNEARRIVE+1]!=0) || 
+        if ((COLONNEARRIVE==COLONNE && LIGNEARRIVE==LIGNE+2 && damier[LIGNEARRIVE-1][COLONNEARRIVE]!=0) ||
+            (LIGNEARRIVE==LIGNE-2 && COLONNE==COLONNEARRIVE && damier[LIGNEARRIVE+1][COLONNEARRIVE]!=0) ||
+            (LIGNEARRIVE==LIGNE && COLONNEARRIVE==COLONNE-2 && damier[LIGNEARRIVE][COLONNEARRIVE+1]!=0) ||
+            (LIGNEARRIVE==LIGNE && COLONNEARRIVE==COLONNE+2 && damier[LIGNEARRIVE][COLONNEARRIVE-1]!=0) ||
+            (LIGNEARRIVE==LIGNE-2 && COLONNEARRIVE==COLONNE-2 && damier[LIGNEARRIVE+1][COLONNEARRIVE+1]!=0) ||
+            (LIGNEARRIVE==LIGNE-2 && COLONNEARRIVE==COLONNE+2 && damier[LIGNEARRIVE+1][COLONNEARRIVE-1]!=0) ||
+            (LIGNEARRIVE==LIGNE+2 && COLONNEARRIVE==COLONNE-2 && damier[LIGNEARRIVE-1][COLONNEARRIVE+1]!=0) ||
             (LIGNEARRIVE==LIGNE+2 && COLONNEARRIVE==COLONNE+2 && damier[LIGNEARRIVE-1][COLONNEARRIVE-1]!=0))
         {
 
@@ -280,9 +280,11 @@ int w=rand()%16;
     j++;
     };
 
-    
+
     if (modex==2){
     //Affichage avec clignotement DEPART
+    printf("L'ordinateur va bouger le pion qui était en Ligne %d , Colonne %d \nL'ordinateur va placé ce pion en Ligne %d, Colonne %d\n", LIGNE, COLONNE, LIGNEARRIVE,COLONNEARRIVE);
+    sleep(9);
     int i;
         for (i=0; i<10; i++){
 
@@ -294,8 +296,8 @@ int w=rand()%16;
             }
 
             system("clear");
-            //fonctionaffichagepion(damier, 18, 18);
-            //sleep(1);
+            fonctionaffichagepion(damier, 18, 18, 2);
+            sleep(2);
 
 
 
@@ -311,13 +313,11 @@ int w=rand()%16;
                 damier[LIGNEARRIVE][COLONNEARRIVE]=0;
             }
                 system("clear");
-                //fonctionaffichagepion(damier, 18, 18);
-                //sleep(1);
+                fonctionaffichagepion(damier, 18, 18, 2);
+                sleep(1);
 
         }
 
-        //printf("L'ordinateur a bouger le pion qui était en Ligne %d , Colonne %d \nL'ordinateur a placé ce pion en Ligne %d, Colonne %d\n", LIGNE, COLONNE, LIGNEARRIVE,COLONNEARRIVE);
-        //sleep(2);
         }
 
         if (modex!=2){
@@ -325,4 +325,3 @@ int w=rand()%16;
             damier[LIGNEARRIVE][COLONNEARRIVE]=numerodejoueur;
         }
     }
-    
