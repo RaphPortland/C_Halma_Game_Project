@@ -4,7 +4,7 @@
 #include <unistd.h>
 
 void fonctionmode2(){
-    //Rempliisage de tout le tableau avec 0
+    //Remplissage de tout le tableau avec 0
     int damier[18][18];
     int i,j;
     for (i=0;i<18;i++)
@@ -30,7 +30,7 @@ void fonctionmode2(){
         i=17;
         damier[i][j]=8;
     }
-     //Remplissage du 1er jeu de pions dans le tableauu damier LES PIONS 1
+     //Remplissage du 1er jeu de pions dans le tableau du damier LES PIONS DU JOUEUR 1
      damier[1][1]=1;
     damier[1][2]=1;
     damier[1][3]=1;
@@ -50,7 +50,7 @@ void fonctionmode2(){
     damier[4][3]=1;
     damier[5][1]=1;
     damier[5][2]=1;
-    //Remplissage du 2 eme jeu de pions dans le tableau damier lES PIONS DU JOUEUR 2
+    //Remplissage du 2ème jeu de pions dans le tableau du damier LES PIONS DU JOUEUR 2
     damier[16][16]=2;
     damier[16][15]=2;
     damier[16][14]=2;
@@ -129,12 +129,12 @@ t=rand()%16+1;
             COLONNE=t%16+1;
         }
         if (i>500){
-            printf("BOUCLE DEPART \nValeur LIGNE depart : %d Valeur COLONNE depart : %d\n", LIGNE, COLONNE);
-            printf("Valeur LIGNE arriver : %d Valeur COLONNE arriver : %d\n", LIGNEARRIVE, COLONNEARRIVE);
+            printf("BOUCLE DEPART \nValeur LIGNE départ : %d Valeur COLONNE départ : %d\n", LIGNE, COLONNE);
+            printf("Valeur LIGNE arrivée : %d Valeur COLONNE arrivée : %d\n", LIGNEARRIVE, COLONNEARRIVE);
 
         }
 
-// Acceptation du pas OK
+// Acceptation du pas 
         if ((damier[LIGNE-1][COLONNE]== 0) || (damier[LIGNE+1][COLONNE] == 0) || (damier[LIGNE][COLONNE-1]==0) || (damier[LIGNE][COLONNE+1]==0) || (damier[LIGNE+1][COLONNE-1]==0) || (damier[LIGNE-1][COLONNE-1]==0) || (damier[LIGNE-1][COLONNE+1]==0) || (damier[LIGNE+1][COLONNE+1]==0))
         {
             if (damier[LIGNE][COLONNE]==numerodejoueur){
@@ -158,7 +158,7 @@ t=rand()%16+1;
     t++;
     };
 
-// ON CHERCHE UN ENDROIT D ARRIVER POUR LE JOUEUR I!!!
+// ON CHERCHE UN ENDROIT D'ARRIVEE POUR LE JOUEUR I!!!
 m=0;
 t=0;
 int autorisation2=0;
@@ -234,12 +234,12 @@ int w=rand()%16;
 
 
         if (j>500){
-            printf("BOUCLE ARRIVE\nValeur LIGNE arriver : %d Valeur COLONNE arriver : %d\n", LIGNEARRIVE, COLONNEARRIVE);
-            printf("Valeur LIGNE depart : %d Valeur COLONNE depart : %d\n", LIGNE, COLONNE);
+            printf("BOUCLE ARRIVE\nValeur LIGNE arrivée : %d Valeur COLONNE arrivée : %d\n", LIGNEARRIVE, COLONNEARRIVE);
+            printf("Valeur LIGNE départ : %d Valeur COLONNE départ : %d\n", LIGNE, COLONNE);
 
         }
 
-// Recherche de l'endroit d'arriver tels que ça soit un pas
+// Recherche de l'endroit d'arrivée tel que ça soit le résultat d'un pas
 
         if (((LIGNEARRIVE==LIGNE+1 && COLONNEARRIVE==COLONNE-1) || (LIGNEARRIVE==LIGNE+1 && COLONNEARRIVE==COLONNE+1) || (LIGNEARRIVE==LIGNE && COLONNEARRIVE==COLONNE+1)
                 || (LIGNEARRIVE==LIGNE && COLONNEARRIVE==COLONNE-1) || (LIGNEARRIVE==LIGNE+1 && COLONNEARRIVE==COLONNE) || (LIGNEARRIVE==LIGNE-1 && COLONNEARRIVE==COLONNE+1)
@@ -251,7 +251,7 @@ int w=rand()%16;
                 }
         }
 
-// Recherche de l'endroit d'arriver tels que ça soit un saut
+// Recherche de l'endroit d'arrivée tel que ça soit le résultat d'un saut
 
         if ((COLONNEARRIVE==COLONNE && LIGNEARRIVE==LIGNE+2 && damier[LIGNEARRIVE-1][COLONNEARRIVE]!=0) ||
             (LIGNEARRIVE==LIGNE-2 && COLONNE==COLONNEARRIVE && damier[LIGNEARRIVE+1][COLONNEARRIVE]!=0) ||
@@ -302,7 +302,7 @@ int w=rand()%16;
 
 
         }
-    //Affichage avec clignotement ARRIVER
+    //Affichage avec clignotement ARRIVEE
         int j;
         for (j=1; j<4; j++){
 
