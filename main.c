@@ -28,12 +28,12 @@ int main() {
 	//Menu Principal
 while (bool==0) {
 
-    printf("        Bievenue dans le jeu de Halma \n");
-    printf("1. Voulez vous jouer une personne vs une personne : 1 \n");
-    printf("2. Voulez vous jouer a une personne vs l'ordinateur : 2\n");
-    printf("3. Voulez vous jouer a quatres personne : 3\n");
-    printf("4. Voulez vous voir jouer deux ordinateur c.a.d mode Machine vs Machine : 4\n");
-    printf("5. Voulez vous voir jouer quatres ordinateur entre eux : 5\n");
+    printf("        Bienvenue dans le jeu de l'Halma !\n");
+    printf("1. Voulez-vous une partie à deux joueurs ?: 1 \n");
+    printf("2. Voulez-vous une partie à un joueur vs l'ordinateur ?: 2\n");
+    printf("3. Voulez-vous une partie à quatres joueurs ? : 3\n");
+    printf("4. Voulez-vous voir jouer deux ordinateur l'un contre l'autre ? mode Machine vs Machine : 4\n");
+    printf("5. Voulez-vous voir jouer quatres ordinateur les uns contre les autres ?: 5\n");
     int nombredejoueur;
     scanf("%d" ,&nombredejoueur);
 
@@ -59,7 +59,7 @@ while (bool==0) {
             fonctionmode5();
 		default:
 			bool=0;
-			printf("Veuillez sélectioner un mode existant c'est a dire compris en 1 et 4 inclus\n");
+			printf("Veuillez sélectionner un mode existant ,c'est à dire compris entre 1 et 4 inclus\n");
 
 	}
 }
