@@ -12,7 +12,7 @@ void fonctiondedeplacementdepionsdujoueurI(int damier[18][18], int Joueurquijoue
 
 
 
-    printf("Choissiez un pion :\n");
+    printf("Choisissez un pion :\n");
     int LIGNE, COLONNE;
     int LIGNEARRIVE = 0, COLONNEARRIVE=0;
     int bool3=0;
@@ -21,7 +21,7 @@ void fonctiondedeplacementdepionsdujoueurI(int damier[18][18], int Joueurquijoue
     do {        //On demande les valeurs des pions choisi jusqu'a que le pion correspondant au joueur est choisi :
         scanf("%d %d", &LIGNE, &COLONNE);
         if (damier[LIGNE][COLONNE]!=Joueurquijoue){
-            printf("Ce pion n'est pas a vous vous ne pouvez donc pas le déplacer\nChoissez un autre pion qui cette fois ci est a vous !\nChoissisez un pion :");
+            printf("Ce pion n'est pas à vous ! vous ne pouvez pas le déplacer.\nChoisissez un autre pion qui est à vous :");
             bool3=0;
         }
         else if (damier[LIGNE][COLONNE]==Joueurquijoue)
@@ -34,7 +34,7 @@ void fonctiondedeplacementdepionsdujoueurI(int damier[18][18], int Joueurquijoue
                 bool3=1;
             }
             else {
-                printf("Vous ne pourrez pas faire de déplacment avec le pion choisi Veuillez en choisir un nouveau \n");
+                printf("Vous ne pouvez pas faire de déplacement avec le pion choisi ; Veuillez en choisir un nouveau \n");
                 bool3=0;
             }
         }
@@ -47,14 +47,14 @@ void fonctiondedeplacementdepionsdujoueurI(int damier[18][18], int Joueurquijoue
     int sautoupas;
 
     do {        // Demande si l'utilisateur veut faire un saut ou un pas
-            printf("Voulez vous faire : 1. Un pas 2. Un saut\n");
+            printf("Voulez-vous faire : 1. Un pas 2. Un saut\n");
             scanf("%d", &sautoupas);
                 if (sautoupas==1 || sautoupas==2){
                     bool36=1;
                 }
                 else {
                    bool36=0;
-                   printf("Vous avez rentrer un numéro different de 1 ou 2\n");
+                   printf("Vous avez rentré un numéro différent de 1 ou 2\n");
                 }
         } while (bool36==0);
 
@@ -63,14 +63,14 @@ void fonctiondedeplacementdepionsdujoueurI(int damier[18][18], int Joueurquijoue
 
     RETOUR=0;
 
-        printf("Choissisez l'endroit d'arriver : \n");
+        printf("Choisissez l'endroit d'arrivée : \n");
         int bool5=1;
 
         do {        //Verification de case d'arrivé vide
             scanf("%d %d", &LIGNEARRIVE, &COLONNEARRIVE);
 
             if (damier[LIGNEARRIVE][COLONNEARRIVE]!=0) {
-                printf("Veuillez choisir un endroit d'arriver ou il y a aucun pion adverse : \n");
+                printf("Veuillez choisir un endroit d'arrivée où il n'y a aucun pion adverse : \n");
                 bool5=1;
             }
             else {bool5=0;}
@@ -92,14 +92,14 @@ void fonctiondedeplacementdepionsdujoueurI(int damier[18][18], int Joueurquijoue
                 }
                 else {
                     bool12=1;
-                    printf("Veuillez indiquer un endroit ou il y a aucun pion");
+                    printf("Veuillez indiquer un endroit où il n'y a aucun pion");
                     scanf("%d %d", &LIGNEARRIVE, &COLONNEARRIVE);
                 }
             }
             else {
-                printf("Veuillez inserer un endroit qui respecte les regles, cad regle du pas ou/et choisir une case ou il y a aucun pion: \n");
+                printf("Veuillez insérer un endroit qui respecte la règle du pas et/ou choisir une case où il n'y a aucun pion: \n");
                 bool12=1;
-                printf("Finalement envie de faire un SAUT ? \n1. Oui \n2. Non\n");
+                printf("Envie de faire un SAUT ? \n1. Oui \n2. Non\n");
                 scanf("%d", &RETOUR);
                 switch (RETOUR){
                     case 1:
@@ -108,7 +108,7 @@ void fonctiondedeplacementdepionsdujoueurI(int damier[18][18], int Joueurquijoue
                     sautoupas=2;
                     break;
                     case 2:
-                    printf("A vous de Selectionner un endroit d'arriver respectant la régle du pas\n");
+                    printf("A vous de sélectionner un endroit d'arrivée respectant la règle du pas\n");
                     scanf("%d %d", &LIGNEARRIVE, &COLONNEARRIVE);
                     bool12=1;
                     break;
@@ -157,7 +157,7 @@ void fonctiondedeplacementdepionsdujoueurI(int damier[18][18], int Joueurquijoue
 
             else {
 
-                printf("Finalement envie de faire un PAS ? \n1. Oui \n2. Non\n");
+                printf("Envie de faire un PAS ? \n1. Oui \n2. Non\n");
                 scanf("%d", &RETOUR);
                 switch (RETOUR){
                     case 1:
@@ -166,7 +166,7 @@ void fonctiondedeplacementdepionsdujoueurI(int damier[18][18], int Joueurquijoue
                     sautoupas=1;
                     break;
                     case 2:
-                    printf("A vous de Selectionner un endroit d'arriver respectant la régle du saut\n");
+                    printf("A vous de sélectionner un endroit d'arrivée respectant la règle du saut\n");
                     scanf("%d %d", &LIGNEARRIVE, &COLONNEARRIVE);
                     bool13=1;
                     break;
@@ -191,7 +191,7 @@ int fonctionsautadjacent(int damier[18][18], int Joueurquijoue, int *LIGNE, int 
                 damier[*LIGNEARRIVE][*COLONNEARRIVE]=Joueurquijoue;
                 fonctionaffichagepion(damier, 18, 18);
                  do {
-                    printf("Voulez vous refaire un saut adjacent si celui ci est possible ?\n1. Oui \n2. Non\n");
+                    printf("Voulez-vous refaire un saut adjacent si celui-ci est possible ?\n1. Oui \n2. Non\n");
                      scanf("%d", &sautx);
 
                         if(sautx==1){
@@ -240,7 +240,7 @@ int detectiondevictoire (int damier[18][18], int numerodujoueur, int nombredejou
                 damier[12][16]==1 && 
                 damier[12][15]==1 ) {
 
-                printf("Bravo au joueur 1 qui a gagner\n");
+                printf("Bravo au joueur 1 qui a gagné !\n");
                 victoire=1;
             }
 
@@ -268,7 +268,7 @@ int detectiondevictoire (int damier[18][18], int numerodujoueur, int nombredejou
                     damier[5][2]==2 ){
 
                 
-                printf("Bravo au joueur 2 qui a gagner\n");
+                printf("Bravo au joueur 2 qui a gagné !\n");
                 victoire=1;
 
             }
@@ -293,7 +293,7 @@ int detectiondevictoire (int damier[18][18], int numerodujoueur, int nombredejou
                     damier[13][16]==1 && 
                     damier[13][15]==1 ){
 
-                printf("Bravo au joueur 1 qui a gagner\n");
+                printf("Bravo au joueur 1 qui a gagné !\n");
                 victoire=1;
 
             }
@@ -315,7 +315,7 @@ int detectiondevictoire (int damier[18][18], int numerodujoueur, int nombredejou
                     damier[4][1]==2 && 
                     damier[4][2]==2 ) {
 
-                printf("Bravo au joueur 2 qui a gagner\n");
+                printf("Bravo au joueur 2 qui a gagné !\n");
                 victoire=1;
 
 
@@ -337,7 +337,7 @@ int detectiondevictoire (int damier[18][18], int numerodujoueur, int nombredejou
                 damier[4][16]==3 &&
                 damier[4][15]==3){
 
-                printf("Bravo au joueur 3 qui a gagner\n");
+                printf("Bravo au joueur 3 qui a gagné !\n");
                 victoire=1;
             }
 
@@ -360,7 +360,7 @@ int detectiondevictoire (int damier[18][18], int numerodujoueur, int nombredejou
                 damier[13][1]==4 &&
                 damier[13][2]==4){
 
-                printf("Bravo au joueur 4 qui a gagner\n");
+                printf("Bravo au joueur 4 qui a gagné !\n");
                 victoire=1;
             }
 
