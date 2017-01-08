@@ -92,19 +92,19 @@ void fonctionturorielmode1(){
 
     int jouer=0;
     do {
-        printf("        Bievenue dans le jeu de Halma \n");
+        printf("        Bienvenue dans le jeu de l'Halma \n");
 
-        printf("\nRégles Generale : \nLe plateau de jeu est composé d’un damier de 16x16 cases de couleurs alternées. Les angles, composés de 19 cases dans le jeu à deux et de 13 cases dans le jeu à quatre, représentent les « maisons », et jouent le rôle de point de départ et en face en diagonale de point d’arrivée.\n\n");
-        printf("Les Deplacements:\n     Soit en avançant d'un pas, c'est à dire en se rendant sur une case voisine laissée libre. \n     Soit en sautant par dessus une pièce (adverse ou non), comme à saute-mouton pour se rendre sur une case libre. Un pion peut sauter par dessus plusieurs pions si une case est laissée libre entre chacun de ces pions. Ce type de déplacement est à privilégier pour avancer son pion plus rapidement.");
+        printf("\nRègles Générales : \nLe plateau de jeu est composé d’un damier de 16x16 cases de couleurs alternées. Les angles, composés de 19 cases dans le jeu à deux et de 13 cases dans le jeu à quatre, représentent les « maisons », et jouent le rôle de point de départ et d’arrivée selon le joueur.\n\n");
+        printf("Les Déplacements:\n     Soit en avançant d'un pas, c'est à dire en se rendant sur une case voisine laissée libre. \n     Soit en sautant par dessus une pièce (adverse ou non), comme à saute-mouton pour se rendre sur une case libre de la même couleur que celle de départ. Un pion peut sauter par dessus plusieurs pions si une case est laissée libre entre chacun de ces pions. Ce type de déplacement est à privilégier pour avancer son pion le plus rapidement possible.");
 
 
-        printf("ATTENTION : Vous ne pourrez pas annuler la saisie de vos pions de départ donc veuillez bien verifié que le pions que vous choisirai aura bien la possibilité de faire un déplacement autorisé.\n");
-        printf("\nMerci d'avoir lu le tutoriel du jeu de Halma produit par Jeremy Brasse, Lillian delaplace et aussi par Raphael Partouche. Bon jeu !! \n\n\n");
+        printf("ATTENTION : Vous ne pourrez pas annuler la saisie de vos pions de départ donc veillez à bien verifier que le pion que vous choisirez aura bien la possibilité de faire un déplacement autorisé.\n");
+        printf("\nMerci d'avoir lu le tutoriel du jeu de l'Halma produit par Jeremy Brasse, Lilian delaplace ainsi que Raphael Partouche. Bon jeu !! \n\n\n");
 
         printf("Envie de passer un bon moment et jouer ?\n1. Oui \n2. Non\n");
         scanf("%d", &jouer);
         if (jouer!=1){
-            printf("Dommage vous n'avez pas le choix\n");
+            printf("Dommage, vous n'avez pas le choix !\n");
             //usleep(int nbr_microsec);
             sleep(1);
         }
