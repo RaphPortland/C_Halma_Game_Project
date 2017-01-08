@@ -7,7 +7,7 @@
 void fonctionmode1(){
 
 
-    //Rempliisage de tout le tableau avec 0
+    //Remplissage de tout le tableau avec 0
     int damier[18][18];
     int i,j;
     for (i=0;i<18;i++)
@@ -39,7 +39,7 @@ void fonctionmode1(){
 
 
 
-     //Remplissage du 1er jeu de pions dans le tableauu damier LES PIONS 1
+     //Remplissage du 1er jeu de pions dans le tableau du damier LES PIONS DU JOUEUR 1
 
     damier[1][1]=1;
     damier[1][2]=1;
@@ -61,7 +61,7 @@ void fonctionmode1(){
     damier[5][1]=1;
     damier[5][2]=1;
 
-    //Remplissage du 2 eme jeu de pions dans le tableau damier lES PIONS DU JOUEUR 2
+    //Remplissage du 2ème jeu de pions dans le tableau du damier LES PIONS DU JOUEUR 2
 
     damier[16][16]=2;
     damier[16][15]=2;
