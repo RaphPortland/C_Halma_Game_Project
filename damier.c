@@ -21,7 +21,7 @@ void fonctionmode1(){
     for (i=0; i<18; i++){
         j=0;
         damier[i][j]=8;
-    }  
+    }
     for (j=0; j<18; j++){
         i=0;
         damier[i][j]=8;
@@ -40,7 +40,7 @@ void fonctionmode1(){
 
 
      //Remplissage du 1er jeu de pions dans le tableauu damier LES PIONS 1
-    
+
     damier[1][1]=1;
     damier[1][2]=1;
     damier[1][3]=1;
@@ -89,7 +89,7 @@ void fonctionmode1(){
     int Joueurquijoue=0;
 
     do {
-           fonctionaffichagepion(damier, 18, 18);
+           fonctionaffichagepion(damier, 18, 18, 2);
         int Aquiletour=m%2;
         if (Aquiletour!=0)
         {
