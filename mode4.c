@@ -232,6 +232,7 @@ void fonctionmode5 (){
             Joueurquijoue=4;
         }
         m++;
+        printf("Les quatres joueurs ont jouer a eux quatres %d coup. \n", m-1);
         detectiondevictoire (damier, Joueurquijoue, 4);
         system("clear\n");
     } while (bool1==1);

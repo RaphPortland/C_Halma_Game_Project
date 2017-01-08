@@ -115,6 +115,7 @@ t=rand()%16+1;
             LIGNE=16-m%16;
             COLONNE=16-t%16;
         }
+
         if (numerodejoueur==2){
             LIGNE=m%16+1;
             COLONNE=t%16+1;
@@ -128,12 +129,12 @@ t=rand()%16+1;
             COLONNE=t%16+1;
         }
         if (i>500){
-            printf("Valeur LIGNE depart : %d Valeur COLONNE depart : %d\n", LIGNE, COLONNE);
+            printf("BOUCLE DEPART \nValeur LIGNE depart : %d Valeur COLONNE depart : %d\n", LIGNE, COLONNE);
             printf("Valeur LIGNE arriver : %d Valeur COLONNE arriver : %d\n", LIGNEARRIVE, COLONNEARRIVE);
 
         }
         
-// Acceptation du pas 
+// Acceptation du pas OK
         if ((damier[LIGNE-1][COLONNE]== 0) || (damier[LIGNE+1][COLONNE] == 0) || (damier[LIGNE][COLONNE-1]==0) || (damier[LIGNE][COLONNE+1]==0) || (damier[LIGNE+1][COLONNE-1]==0) || (damier[LIGNE-1][COLONNE-1]==0) || (damier[LIGNE-1][COLONNE+1]==0) || (damier[LIGNE+1][COLONNE+1]==0))
         {
             if (damier[LIGNE][COLONNE]==numerodejoueur){
@@ -144,48 +145,96 @@ t=rand()%16+1;
         }
 
 // Acceptation du saut
-        if ((damier[LIGNE][COLONNE+2]==0 || damier[LIGNE+2][COLONNE+2]==0 || damier[LIGNE+2][COLONNE]==0 || damier[LIGNE+2][COLONNE-2]==0 || damier[LIGNE][COLONNE-2]==0 || damier[LIGNE-2][COLONNE-2]==0 || damier[LIGNE-2][COLONNE]==0 || damier[LIGNE-2][COLONNE+2]==0))
-        {
-            if (damier[LIGNE][COLONNE]==numerodejoueur){
 
-                autorisation=1;
-                    
-             }
+        if (numerodejoueur==1 && LIGNE==16 && COLONNE==16){
+            autorisation=0;
         }
 
-        if (t%16+1==8){
+        if (t%17+1==17){
             m++;
         }
+
     i++;
     t++;
     };
 
 // ON CHERCHE UN ENDROIT D ARRIVER POUR LE JOUEUR I!!!
-m=rand()%16+1;
-t=rand()%16+1;
+m=0;
+t=0;
 int autorisation2=0;
 int j=0;
+int w=rand()%16;
 
     while (autorisation2==0){
 
-        if (numerodejoueur==1){
+// Traitement pour numerodejoueur = 1
+        if (j==0 && numerodejoueur==1){
+            if (w%4==0){
+                LIGNEARRIVE=LIGNE+1;
+                COLONNEARRIVE=COLONNE+1;
+            }
+            else {
+                LIGNEARRIVE=LIGNE;
+                COLONNEARRIVE=COLONNE+1;
+            }
+        }
+
+        if (numerodejoueur==1 && j>0){
             LIGNEARRIVE=16-m%16;
             COLONNEARRIVE=16-t%16;
         }
-        if (numerodejoueur==2){
+// Traitement pour numerodejoueur = 2
+        if(numerodejoueur==2 && j==0){
+            if (w%4== 0){
+                LIGNEARRIVE=LIGNE-1;
+                COLONNEARRIVE=COLONNE-1;
+            }
+            else {
+                LIGNEARRIVE=LIGNE;
+                COLONNEARRIVE=COLONNE-1;
+            }
+        }
+
+        if (numerodejoueur==2 && j>0){
             LIGNEARRIVE=m%16+1;
             COLONNEARRIVE=t%16+1;
         }
-        if (numerodejoueur==3){
+// Traitement pour numerodejoueur = 3
+        if(numerodejoueur==3 && j==0){
+            if (w%4== 0){
+                LIGNEARRIVE=LIGNE-1;
+                COLONNEARRIVE=COLONNE+1;
+            }
+            else {
+                LIGNEARRIVE=LIGNE;
+                COLONNEARRIVE=COLONNE+1;
+            }
+        }
+
+        if (numerodejoueur==3 && j>0){
             LIGNEARRIVE=m%16+1;
             COLONNEARRIVE=16-t%16;
         }
-        if (numerodejoueur==4){
+// Traitement pour numerodejoueur = 4
+        if(numerodejoueur==4 && j==0){
+            if(w%5==0){
+                LIGNEARRIVE=LIGNE+1;
+                COLONNEARRIVE=COLONNE-1;
+            }
+            else {
+                LIGNEARRIVE=LIGNE;
+                COLONNEARRIVE=COLONNE-1;
+            }
+        }
+        
+        if (numerodejoueur==4 && j>0){
             LIGNEARRIVE=16-m%16;
             COLONNEARRIVE=t%16+1;
         }
+
+
         if (j>500){
-            printf("Valeur LIGNE arriver : %d Valeur COLONNE arriver : %d\n", LIGNEARRIVE, COLONNEARRIVE);
+            printf("BOUCLE ARRIVE\nValeur LIGNE arriver : %d Valeur COLONNE arriver : %d\n", LIGNEARRIVE, COLONNEARRIVE);
             printf("Valeur LIGNE depart : %d Valeur COLONNE depart : %d\n", LIGNE, COLONNE);
 
         }
@@ -193,13 +242,12 @@ int j=0;
 // Recherche de l'endroit d'arriver tels que ça soit un pas
 
         if (((LIGNEARRIVE==LIGNE+1 && COLONNEARRIVE==COLONNE-1) || (LIGNEARRIVE==LIGNE+1 && COLONNEARRIVE==COLONNE+1) || (LIGNEARRIVE==LIGNE && COLONNEARRIVE==COLONNE+1)
-                || (LIGNEARRIVE==LIGNE && COLONNEARRIVE==COLONNE-1) || (LIGNEARRIVE==LIGNE+1 && COLONNEARRIVE==COLONNE) || (LIGNEARRIVE==LIGNE+1 && COLONNEARRIVE==COLONNE-1)
+                || (LIGNEARRIVE==LIGNE && COLONNEARRIVE==COLONNE-1) || (LIGNEARRIVE==LIGNE+1 && COLONNEARRIVE==COLONNE) || (LIGNEARRIVE==LIGNE-1 && COLONNEARRIVE==COLONNE+1)
                 || (LIGNEARRIVE==LIGNE-1 && COLONNEARRIVE==COLONNE-1) || (LIGNEARRIVE==LIGNE-1 && COLONNEARRIVE==COLONNE ))){
 
                 if (damier[LIGNEARRIVE][COLONNEARRIVE]==0)
                 {
-                    autorisation2=1;
-
+                    autorisation2=1; 
                 }
         }
 
@@ -223,9 +271,10 @@ int j=0;
 
         }
 
-        if (t%16+1==8){
+         if (t%16+1==8){
             m++;
         }
+
 
     t++;
     j++;
@@ -265,7 +314,7 @@ int j=0;
                 //fonctionaffichagepion(damier, 18, 18);
                 //sleep(1);
 
-            }
+        }
 
         //printf("L'ordinateur a bouger le pion qui était en Ligne %d , Colonne %d \nL'ordinateur a placé ce pion en Ligne %d, Colonne %d\n", LIGNE, COLONNE, LIGNEARRIVE,COLONNEARRIVE);
         //sleep(2);
@@ -276,4 +325,4 @@ int j=0;
             damier[LIGNEARRIVE][COLONNEARRIVE]=numerodejoueur;
         }
     }
-
+    
