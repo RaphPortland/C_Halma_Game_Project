@@ -13,7 +13,7 @@
 void fonctionmode4 (){
 
 
-    //Rempliisage de tout le tableau avec 0
+    //Remplissage de tout le tableau avec 0
    int damier[18][18];
     int i,j;
     for (i=0;i<18;i++)
@@ -39,7 +39,7 @@ void fonctionmode4 (){
         i=17;
         damier[i][j]=8;
     }
-     //Remplissage du 1er jeu de pions dans le tableauu damier LES PIONS 1
+     //Remplissage du 1er jeu de pions dans le tableau du damier LES PIONS DU JOUEUR 1
      damier[1][1]=1;
     damier[1][2]=1;
     damier[1][3]=1;
@@ -59,7 +59,7 @@ void fonctionmode4 (){
     damier[4][3]=1;
     damier[5][1]=1;
     damier[5][2]=1;
-    //Remplissage du 2 eme jeu de pions dans le tableau damier lES PIONS DU JOUEUR 2
+    //Remplissage du 2ème jeu de pions dans le tableau du damier lES PIONS DU JOUEUR 2
     damier[16][16]=2;
     damier[16][15]=2;
     damier[16][14]=2;
@@ -99,8 +99,8 @@ void fonctionmode4 (){
         m++;
         a=m-1;
         if (a%200==0){
-            printf("Petite pose dans le jeu histoire de voir l'évolution\n");
-            printf("Les deux joueurs ont jouer a eux deux %d coup. \n", m-1);
+            printf("Petite pause dans le jeu histoire de voir l'évolution\n");
+            printf("Les deux joueurs ont joué à eux deux %d coup(s). \n", m-1);
             a++;
             sleep(7);
         }
@@ -115,7 +115,7 @@ void fonctionmode5 (){
 
 
 
-    //Rempliisage de tout le tableau avec 0
+    //Remplissage de tout le tableau avec des 0
     int damier[18][18];
     int i,j;
     for (i=0;i<18;i++)
@@ -142,7 +142,7 @@ void fonctionmode5 (){
         i=17;
         damier[i][j]=8;
     }
-    //Remplissage du 1er jeu de pions dans le tableauu damier LES PIONS 1
+    //Remplissage du 1er jeu de pions dans le tableau du damier LES PIONS DU JOUEUR 1
     damier[1][1]=1;
     damier[1][2]=1;
     damier[1][3]=1;
@@ -158,7 +158,7 @@ void fonctionmode5 (){
     damier[4][2]=1;
 
 
-    //Remplissage du 2 eme jeu de pions dans le tableau damier lES PIONS DU JOUEUR 2
+    //Remplissage du 2ème jeu de pions dans le tableau du damier LES PIONS DU JOUEUR 2
 
     damier[16][16]=2;
     damier[16][15]=2;
@@ -174,7 +174,7 @@ void fonctionmode5 (){
     damier[13][16]=2;
     damier[13][15]=2;
 
-    // Remplissage du 3eme jeu de pions dans le tableau LES PIONS DU JOUEUR 4
+    //Remplissage du 3ème jeu de pions dans le tableau du damier LES PIONS DU JOUEUR 4
 
     damier[16][1]=3;
     damier[16][2]=3;
@@ -190,7 +190,7 @@ void fonctionmode5 (){
     damier[13][1]=3;
     damier[13][2]=3;
 
-    //Remplissage du 4 eme jeu de pions dans le tableau LES PIONS DU JOUEUR 3
+    //Remplissage du 4ème jeu de pions dans le tableau du damier LES PIONS DU JOUEUR 3
 
     damier[1][16]=4;
     damier[1][15]=4;
@@ -207,7 +207,7 @@ void fonctionmode5 (){
     damier[4][15]=4;
 
 
-    //affichage du plateau de jeu a 4 joueur et deplacement de pions Verifié
+    //affichage du plateau de jeu à 4 joueurs et déplacement de pions verifié
     int bool1=1;
     int m=1, a;
     int Joueurquijoue=0;
@@ -241,8 +241,8 @@ void fonctionmode5 (){
         m++;
          a=m-1;
         if (a%200==0){
-            printf("Petite pose dans le jeu histoire de voir l'évolution\n");
-            printf("Les quatres joueurs ont jouer a eux quatres %d coup. \n", m-1);
+            printf("Petite pause dans le jeu histoire de voir l'évolution\n");
+            printf("Les quatres joueurs ont joué à eux quatres %d coup. \n", m-1);
             a++;
             sleep(7);
         }
