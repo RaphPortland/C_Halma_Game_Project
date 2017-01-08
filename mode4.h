@@ -8,10 +8,12 @@
 #ifndef mode4_h
 #define mode4_h
 
+#include "affichagemode1.h"
 #include <stdio.h>
 #include "mode2.h"
 #include "time.h"
 #include <stdlib.h>
+#include <unistd.h>
 #endif /* mode4_h */
 void fonctionmode4 ();
 void fonctiondeplacementparlordi(int damier[18][18], int numerodejoueur, int modex, int nbrsdecoup);
