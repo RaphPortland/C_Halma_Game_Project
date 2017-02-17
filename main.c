@@ -28,7 +28,7 @@ int main() {
 	//Menu Principal
 while (bool==0) {
 
-    printf("        Bienvenue dans le jeu de l'Halma !\n");
+    printf("      **  Bienvenue dans le jeu de l'Halma !\n");
     printf("1. Voulez-vous une partie à deux joueurs ?: 1 \n");
     printf("2. Voulez-vous une partie à un joueur vs l'ordinateur ?: 2\n");
     printf("3. Voulez-vous une partie à quatres joueurs ? : 3\n");
